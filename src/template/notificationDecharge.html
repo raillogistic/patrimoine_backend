@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href='https://fonts.googleapis.com/css2?family=Calibri&display=swap' rel='stylesheet'>
+
+    <title>Email</title>
+</head>
+<body style="font-family: 'Calibri', sans-serif;">
+    <div style="width: 100%;background-color: #30475E;color: white;border-radius: 10px;">
+        <div style="padding:30px;">
+            <p style="color: white;"> DIRECTION DES SYSTEMS D'INFORMATION </p>
+            <p style="color: white;"> DEPARTEMENT DEVELOPPEMENT & MOYNES D'APPYUI </p>
+            <hr>
+
+            <p style="color: white;"> DECHARGE : <b>{{ decharge.number }}</b> </p>
+            <p style="color: white;"> DATE DE DECHARGE : <b>{{ decharge.issue_date  }}</b> </p>
+            <hr>
+ 
+            <p style="color: white;"> DESIGNATION: <b>{{  item.description }}</b> </p>
+       
+            <p style="color: white;"> NOUVELLE AFFECTATION: <b>{{ decharge.client.full_name }}</b> </p>
+        </div>
+    </div>
+</body>
+</html>

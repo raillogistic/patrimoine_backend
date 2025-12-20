@@ -1,0 +1,11 @@
+
+DELETE FROM django_migrations WHERE app='facturation';
+delete all facturation tables
+python manage.py migrate
+python manage.py populate_history --auto
+
+
+
+
+# change password of postgres
+docker exec -it erp_db  psql -U  postgres -c "ALTER USER postgres PASSWORD 'it-2017***';"

@@ -1,0 +1,38 @@
+# generate UML diagrame class
+python manage.py graph_models -a --dot -o myapp_models.dot
+dot -Tpng myapp_models.dot -omyapp_models.png
+
+# UML diagrame by application
+./manage.py graph_models -a -g --dot -o my_project_visualized.dot
+dot -Tpng my_project_visualized.dot -omy_project_visualized.png
+
+# delete all migrations
+find . -path "*/migrations/*.py" -not -name "__init__.py" -delete
+
+find . -path "*/graphqls/*.py"  -not -name "__init__.py" -delete
+find . -path "*/graphqls/*.pyc" -not -name "__init__.py" -delete
+
+#export oracle
+export ORACLE_HOME=/opt/oracle/instantclient_21_1 && export LD_LIBRARY_PATH="$ORACLE_HOME" && export PATH="$ORACLE_HOME:$PATH"
+
+
+# install postgres
+sudo apt install postgresql postgresql-contrib
+# start postgres
+sudo service postgresql start
+sudo -u postgres psql
+# create postgres database
+create database erp;
+# create user
+sudo -u postgres createuser mkhaled
+# set password
+alter user mkhaled with encrypted password 'KhaledRM250';
+# grant privileges
+grant all privileges on database erp to mkhaled ; 
+
+
+
+
+CREATE SUBSCRIPTION transport_sub
+CONNECTION 'host=192.168.0.3 port=5433 dbname=trannsport_v2 user=replicator password=replicatorpass'
+PUBLICATION my_pub;
