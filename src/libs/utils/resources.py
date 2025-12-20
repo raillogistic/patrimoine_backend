@@ -39,6 +39,9 @@ logger = logging.getLogger(__name__)
 logger.addHandler(logging.NullHandler())
 
 USE_TRANSACTIONS = getattr(settings, "IMPORT_EXPORT_USE_TRANSACTIONS", True)
+USE_SERVER_SIDE_CURSORS = getattr(
+    settings, "IMPORT_EXPORT_USE_SERVER_SIDE_CURSORS", False
+)
 
 
 def get_related_model(field):
@@ -744,9 +747,14 @@ class Resource(metaclass=DeclarativeMetaclass):
         data = tablib.Dataset(headers=headers)
 
         if isinstance(queryset, QuerySet):
-            # Iterate without the queryset cache, to avoid wasting memory when
-            # exporting large datasets.
-            iterable = queryset.iterator()
+            # Server-side cursors can be closed unexpectedly outside a transaction
+            # (e.g., admin export actions), so allow opting out via settings.
+            if USE_SERVER_SIDE_CURSORS:
+                # Iterate without the queryset cache, to avoid wasting memory when
+                # exporting large datasets.
+                iterable = queryset.iterator()
+            else:
+                iterable = queryset.all()
         else:
             iterable = queryset
         for obj in iterable:

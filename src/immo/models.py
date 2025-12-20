@@ -81,6 +81,8 @@ class Affectation(models.Model):
     class Meta:
         managed = False
         db_table = "Affectation"
+        verbose_name = "affectation"
+        verbose_name_plural = "affectations"
 
 
 class Amortization(models.Model):
@@ -114,6 +116,8 @@ class Amortization(models.Model):
     class Meta:
         managed = False
         db_table = "Amortization"
+        verbose_name = "amortissement"
+        verbose_name_plural = "amortissements"
 
 
 class Appliance(models.Model):
@@ -152,6 +156,8 @@ class Appliance(models.Model):
     class Meta:
         managed = False
         db_table = "Appliance"
+        verbose_name = "appareil"
+        verbose_name_plural = "appareils"
 
 
 class Article(models.Model):
@@ -235,6 +241,8 @@ class Article(models.Model):
     class Meta:
         managed = False
         db_table = "Article"
+        verbose_name = "article"
+        verbose_name_plural = "articles"
 
 
 class Articleexitreason(models.Model):
@@ -261,12 +269,18 @@ class Articleexitreason(models.Model):
     class Meta:
         managed = False
         db_table = "ArticleExitReason"
+        verbose_name = "motif de sortie d article"
+        verbose_name_plural = "motifs de sortie d article"
 
 
 class Block(models.Model):
     blockname = models.CharField(max_length=150, verbose_name="nom du bloc")
     designation = models.CharField(
-        max_length=500, blank=True, null=True, verbose_name="description"
+        max_length=500,
+        blank=True,
+        null=True,
+        verbose_name="description",
+        db_column="description",
     )
     location = models.IntegerField(
         db_column="locationId", verbose_name="localisation"
@@ -282,6 +296,8 @@ class Block(models.Model):
     class Meta:
         managed = False
         db_table = "Block"
+        verbose_name = "bloc"
+        verbose_name_plural = "blocs"
 
 
 class Construction(models.Model):
@@ -344,6 +360,8 @@ class Construction(models.Model):
     class Meta:
         managed = False
         db_table = "Construction"
+        verbose_name = "construction"
+        verbose_name_plural = "constructions"
 
 
 class Department(models.Model):
@@ -351,7 +369,11 @@ class Department(models.Model):
         unique=True, max_length=150, verbose_name="nom du departement"
     )
     designation = models.CharField(
-        max_length=500, blank=True, null=True, verbose_name="description"
+        max_length=500,
+        blank=True,
+        null=True,
+        verbose_name="description",
+        db_column="description",
     )
     createdat = models.DateTimeField(
         db_column="createdAt", verbose_name="date de creation"
@@ -370,6 +392,8 @@ class Department(models.Model):
     class Meta:
         managed = False
         db_table = "Department"
+        verbose_name = "departement"
+        verbose_name_plural = "departements"
 
 
 class Departmenthistory(models.Model):
@@ -399,6 +423,8 @@ class Departmenthistory(models.Model):
     class Meta:
         managed = False
         db_table = "DepartmentHistory"
+        verbose_name = "historique de departement"
+        verbose_name_plural = "historiques de departement"
 
 
 class Electronics(models.Model):
@@ -442,6 +468,8 @@ class Electronics(models.Model):
     class Meta:
         managed = False
         db_table = "Electronics"
+        verbose_name = "electronique"
+        verbose_name_plural = "electroniques"
 
 
 class Employer(models.Model):
@@ -474,12 +502,18 @@ class Employer(models.Model):
     class Meta:
         managed = False
         db_table = "Employer"
+        verbose_name = "employeur"
+        verbose_name_plural = "employeurs"
 
 
 class Exitreason(models.Model):
     title = models.CharField(max_length=300, verbose_name="titre")
     designation = models.CharField(
-        max_length=500, blank=True, null=True, verbose_name="description"
+        max_length=500,
+        blank=True,
+        null=True,
+        verbose_name="description",
+        db_column="description",
     )
     date = models.DateTimeField(verbose_name="date")
     user = models.ForeignKey(
@@ -493,6 +527,8 @@ class Exitreason(models.Model):
     class Meta:
         managed = False
         db_table = "ExitReason"
+        verbose_name = "motif de sortie"
+        verbose_name_plural = "motifs de sortie"
 
 
 class Family(models.Model):
@@ -521,6 +557,8 @@ class Family(models.Model):
     class Meta:
         managed = False
         db_table = "Family"
+        verbose_name = "famille"
+        verbose_name_plural = "familles"
 
 
 class File(models.Model):
@@ -540,6 +578,8 @@ class File(models.Model):
     class Meta:
         managed = False
         db_table = "File"
+        verbose_name = "fichier"
+        verbose_name_plural = "fichiers"
 
 
 class Financingmethod(models.Model):
@@ -555,6 +595,8 @@ class Financingmethod(models.Model):
     class Meta:
         managed = False
         db_table = "Financingmethod"
+        verbose_name = "methode de financement"
+        verbose_name_plural = "methodes de financement"
 
 
 class Fueltype(models.Model):
@@ -570,6 +612,8 @@ class Fueltype(models.Model):
     class Meta:
         managed = False
         db_table = "FuelType"
+        verbose_name = "type de carburant"
+        verbose_name_plural = "types de carburant"
 
 
 class Furniture(models.Model):
@@ -601,6 +645,8 @@ class Furniture(models.Model):
     class Meta:
         managed = False
         db_table = "Furniture"
+        verbose_name = "mobilier"
+        verbose_name_plural = "mobiliers"
 
 
 class Land(models.Model):
@@ -659,6 +705,8 @@ class Land(models.Model):
     class Meta:
         managed = False
         db_table = "Land"
+        verbose_name = "terrain"
+        verbose_name_plural = "terrains"
 
 
 class Location(models.Model):
@@ -695,6 +743,8 @@ class Location(models.Model):
     class Meta:
         managed = False
         db_table = "Location"
+        verbose_name = "localisation"
+        verbose_name_plural = "localisations"
         unique_together = (("parent", "locationname"),)
 
 
@@ -737,6 +787,8 @@ class Machinery(models.Model):
     class Meta:
         managed = False
         db_table = "Machinery"
+        verbose_name = "machine"
+        verbose_name_plural = "machines"
 
 
 class Medicalsupply(models.Model):
@@ -782,6 +834,8 @@ class Medicalsupply(models.Model):
     class Meta:
         managed = False
         db_table = "MedicalSupply"
+        verbose_name = "fourniture medicale"
+        verbose_name_plural = "fournitures medicales"
 
 
 class Notification(models.Model):
@@ -820,6 +874,8 @@ class Notification(models.Model):
     class Meta:
         managed = False
         db_table = "Notification"
+        verbose_name = "notification"
+        verbose_name_plural = "notifications"
 
 
 class Refreshtoken(models.Model):
@@ -841,6 +897,8 @@ class Refreshtoken(models.Model):
     class Meta:
         managed = False
         db_table = "RefreshToken"
+        verbose_name = "jeton de rafraichissement"
+        verbose_name_plural = "jetons de rafraichissement"
 
 
 class Room(models.Model):
@@ -862,6 +920,8 @@ class Room(models.Model):
     class Meta:
         managed = False
         db_table = "Room"
+        verbose_name = "salle"
+        verbose_name_plural = "salles"
 
 
 class Software(models.Model):
@@ -908,6 +968,8 @@ class Software(models.Model):
     class Meta:
         managed = False
         db_table = "Software"
+        verbose_name = "logiciel"
+        verbose_name_plural = "logiciels"
 
 
 class Stationery(models.Model):
@@ -940,6 +1002,8 @@ class Stationery(models.Model):
     class Meta:
         managed = False
         db_table = "Stationery"
+        verbose_name = "fourniture de bureau"
+        verbose_name_plural = "fournitures de bureau"
 
 
 class Subfamily(models.Model):
@@ -967,6 +1031,8 @@ class Subfamily(models.Model):
     class Meta:
         managed = False
         db_table = "Subfamily"
+        verbose_name = "sous-famille"
+        verbose_name_plural = "sous-familles"
 
 
 class Supplier(models.Model):
@@ -995,6 +1061,8 @@ class Supplier(models.Model):
     class Meta:
         managed = False
         db_table = "Supplier"
+        verbose_name = "fournisseur"
+        verbose_name_plural = "fournisseurs"
 
 
 class Tool(models.Model):
@@ -1039,6 +1107,8 @@ class Tool(models.Model):
     class Meta:
         managed = False
         db_table = "Tool"
+        verbose_name = "outil"
+        verbose_name_plural = "outils"
 
 
 class OldUser(models.Model):
@@ -1090,7 +1160,9 @@ class OldUser(models.Model):
 
     class Meta:
         managed = False
-        db_table = "OldUser"
+        db_table = "User"
+        verbose_name = "utilisateur"
+        verbose_name_plural = "utilisateurs"
 
 
 class Vehicle(models.Model):
@@ -1156,6 +1228,8 @@ class Vehicle(models.Model):
     class Meta:
         managed = False
         db_table = "Vehicle"
+        verbose_name = "vehicule"
+        verbose_name_plural = "vehicules"
 
 
 class Vehiclemodel(models.Model):
@@ -1171,6 +1245,8 @@ class Vehiclemodel(models.Model):
     class Meta:
         managed = False
         db_table = "VehicleModel"
+        verbose_name = "modele de vehicule"
+        verbose_name_plural = "modeles de vehicule"
 
 
 class Vehicletype(models.Model):
@@ -1192,3 +1268,5 @@ class Vehicletype(models.Model):
     class Meta:
         managed = False
         db_table = "VehicleType"
+        verbose_name = "type de vehicule"
+        verbose_name_plural = "types de vehicule"

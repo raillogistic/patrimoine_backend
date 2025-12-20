@@ -142,6 +142,7 @@ DATABASES = {
         default="postgresql://mkhaled:KhaledRM250@localhost:5432/inventory_system",
     )
 }
+DATABASES["default"]["ENGINE"] = "libs.db.backends.postgresql"
 
 GRAPHENE_DJANGO_FILTER = {
     "FILTER_KEY": "filter",
