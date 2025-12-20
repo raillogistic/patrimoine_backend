@@ -1,0 +1,38 @@
+version: "3.7"
+
+services:
+  inv_backend:
+    container_name: inv_backend
+    image: inv_backend
+    restart: always
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    command: gunicorn -k uvicorn.workers.UvicornWorker root.asgi:application --bind 0.0.0.0:7777 --timeout  600
+ #
+    # entrypoint: ./entrypoint.sh
+    volumes:
+      - static_files:/home/app/staticfiles
+      - media_volume:/home/app/media
+    expose:
+      - 7777
+    env_file:
+      - ./.env.prod
+    
+  inv_nginx:
+    container_name: inv_nginx
+    image: nginx-prod
+    restart: always
+    build: ./nginx
+    volumes:
+      - static_files:/home/app/v2/staticfiles
+      - media_volume:/home/app/v2/media
+      # - ./nginx:/etc/nginx/conf.d
+    ports:
+      - 7777:80
+    depends_on:
+      - inv_backend
+  
+volumes:
+  static_files:
+  media_volume:

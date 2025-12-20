@@ -1,0 +1,1 @@
+npx -y mcp-graphql-schema E:/Projects/RAIL_LOGISTIC/inventaire/backend/src/schema.graphql

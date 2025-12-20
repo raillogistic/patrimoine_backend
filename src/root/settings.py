@@ -40,14 +40,7 @@ FILE_UPLOAD_MAX_MEMORY_SIZE = 62428800  # 50MB (adjust as needed)
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
-CSRF_TRUSTED_ORIGINS = [
-    f"http://{os.environ.get('crf', 'localhost')}:8000",
-    "http://localhost:8088",
-    "http://192.168.0.51:8088",
-    "http://192.168.0.50:8088",
-    "http://41.111.138.26:8088",
-    "http://41.111.138.26:8090",
-]
+CSRF_TRUSTED_ORIGINS = ["http://*"]
 DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
 # Application definition
@@ -163,7 +156,7 @@ APPEND_SLASH = False
 GRAPHENE = {
     # 'RELAY_CONNECTION_ENFORCE_FIRST_OR_LAST': True,
     "RELAY_CONNECTION_MAX_LIMIT": 100,
-    "SCHEMA": "root.schema.schema",
+    "SCHEMA": "libs.graphql.schema.project_schema.schema",
     "SCHEMA_INDENT": 4,
     "MIDDLEWARE": [
         "graphql_jwt.middleware.JSONWebTokenMiddleware",

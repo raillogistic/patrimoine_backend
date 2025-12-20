@@ -2,7 +2,7 @@
 
 Ce module gere :
 - Les campagnes d'inventaire (cadre temporel des comptages).
-- Les groupes de comptage (un utilisateur, un appareil, un role unique).
+- Les groupes de comptage (un utilisateur, un appareil, un role unique, un PIN).
 - Les enregistrements de scans (article, lieu, horodatage).
 
 Notes:
@@ -111,6 +111,12 @@ class GroupeComptage(ModeleHorodatage):
         unique=True,
         verbose_name="Identifiant de l'appareil",
         help_text="Identifiant unique de l'appareil utilise pour scanner.",
+    )
+    pin_code = models.CharField(
+        max_length=12,
+        default="0000",
+        verbose_name="Code PIN",
+        help_text="Code PIN requis pour valider la selection du groupe.",
     )
     role = models.CharField(
         max_length=20,
