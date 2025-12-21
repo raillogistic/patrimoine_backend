@@ -209,6 +209,9 @@ class Resource(metaclass=DeclarativeMetaclass):
 
         self.fields = deepcopy(self.fields)
 
+    def get_display_name(self):
+        return self.__class__.__name__
+
     @classmethod
     def get_result_class(self):
         """
