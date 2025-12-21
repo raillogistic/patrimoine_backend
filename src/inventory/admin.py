@@ -1,10 +1,10 @@
 from django.contrib import admin
-from import_export.admin import ImportExportModelAdmin
+from libs.utils.import_export_admin import SafeImportExportModelAdmin
 
 from .models import CampagneInventaire, EnregistrementInventaire, GroupeComptage
 
 
-class TimestampedAdmin(ImportExportModelAdmin):
+class TimestampedAdmin(SafeImportExportModelAdmin):
     readonly_fields = ("cree_le", "modifie_le")
 
 
@@ -111,7 +111,6 @@ class EnregistrementInventaireAdmin(TimestampedAdmin):
     search_fields = (
         "code_article",
         "article__code",
-        "article__desc",
         "lieu__locationname",
         "departement__departmentname",
         "groupe__nom",

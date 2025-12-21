@@ -1,12 +1,12 @@
 from django.apps import apps
 from django.contrib import admin
 from django.db import models
-from import_export.admin import ImportExportModelAdmin
+from libs.utils.import_export_admin import SafeImportExportModelAdmin
 
 from .models import Article, Location
 
 
-class ReadOnlyModelAdmin(ImportExportModelAdmin):
+class ReadOnlyModelAdmin(SafeImportExportModelAdmin):
     def has_add_permission(self, request):
         return False
 
@@ -104,10 +104,9 @@ def _build_admin_class(model):
     return type(f"{model.__name__}Admin", (ReadOnlyModelAdmin,), attrs)
 
 
-class ArticleAdmin(ImportExportModelAdmin):
+class ArticleAdmin(SafeImportExportModelAdmin):
     list_display = (
         "code",
-        "desc",
         "family",
         "supplier",
         "quantity",
@@ -117,7 +116,6 @@ class ArticleAdmin(ImportExportModelAdmin):
     )
     search_fields = (
         "code",
-        "desc",
         "serialnumber",
         "references",
         "invoice",
@@ -136,17 +134,37 @@ class ArticleAdmin(ImportExportModelAdmin):
     list_select_related = ("supplier", "family", "user")
     date_hierarchy = "createdat"
     fieldsets = (
-        ("Identification", {"fields": ("code", "desc", "type", "serialnumber", "references")} ),
-        ("Achat", {"fields": ("acquiringdate", "deliverynote", "invoice", "financingmethod", "supplier")} ),
-        ("Finances", {"fields": ("beginningfiscalprice", "totalfiscalprice", "amortizationyears")} ),
-        ("Stock", {"fields": ("quantity", "isexited", "exitedat")} ),
-        ("Classification", {"fields": ("family",)} ),
-        ("Notes", {"fields": ("observation",)} ),
-        ("Audit", {"fields": ("user", "createdat", "updatedat")} ),
+        ("Identification", {"fields": ("code", "type", "serialnumber", "references")}),
+        (
+            "Achat",
+            {
+                "fields": (
+                    "acquiringdate",
+                    "deliverynote",
+                    "invoice",
+                    "financingmethod",
+                    "supplier",
+                )
+            },
+        ),
+        (
+            "Finances",
+            {
+                "fields": (
+                    "beginningfiscalprice",
+                    "totalfiscalprice",
+                    "amortizationyears",
+                )
+            },
+        ),
+        ("Stock", {"fields": ("quantity", "isexited", "exitedat")}),
+        ("Classification", {"fields": ("family",)}),
+        ("Notes", {"fields": ("observation",)}),
+        ("Audit", {"fields": ("user", "createdat", "updatedat")}),
     )
 
 
-class LocationAdmin(ImportExportModelAdmin):
+class LocationAdmin(SafeImportExportModelAdmin):
     list_display = (
         "locationname",
         "type",
@@ -157,7 +175,6 @@ class LocationAdmin(ImportExportModelAdmin):
     )
     search_fields = (
         "locationname",
-        "desc",
         "barcode",
         "type",
     )
@@ -171,10 +188,9 @@ class LocationAdmin(ImportExportModelAdmin):
     list_select_related = ("parent", "user")
     date_hierarchy = "createdat"
     fieldsets = (
-        ("Identification", {"fields": ("locationname", "type", "barcode")} ),
-        ("Hierarchie", {"fields": ("parent",)} ),
-        ("Description", {"fields": ("desc",)} ),
-        ("Audit", {"fields": ("user", "createdat", "updatedat")} ),
+        ("Identification", {"fields": ("locationname", "type", "barcode")}),
+        ("Hierarchie", {"fields": ("parent",)}),
+        ("Audit", {"fields": ("user", "createdat", "updatedat")}),
     )
 
 

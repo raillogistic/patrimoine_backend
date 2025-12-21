@@ -60,7 +60,6 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django.contrib.humanize",
     "import_export",
-    "import_export",
     "graphene_django",
     "django_extensions",
     "django_filters",

@@ -1,6 +1,7 @@
 import functools
 import logging
 import traceback
+from datetime import datetime
 from collections import OrderedDict
 from copy import deepcopy
 
@@ -20,6 +21,7 @@ from django.db.transaction import (
     savepoint_commit,
     savepoint_rollback,
 )
+from django.utils import timezone
 from django.utils.encoding import force_str
 from django.utils.safestring import mark_safe
 from import_export import widgets
@@ -1069,6 +1071,25 @@ class ModelResource(Resource, metaclass=ModelDeclarativeMetaclass):
                     cursor.close()
 
 
+class SafeDateTimeWidget(widgets.DateTimeWidget):
+    def render(self, value, obj=None):
+        self._obj_deprecation_warning(obj)
+        if self.coerce_to_string is False:
+            return value
+        if not value or not isinstance(value, datetime):
+            return ""
+        if settings.USE_TZ and timezone.is_aware(value):
+            value = timezone.localtime(value)
+        return widgets.format_datetime(value, self.formats[0])
+
+
+class SafeModelResource(ModelResource):
+    WIDGETS_MAP = {
+        **ModelResource.WIDGETS_MAP,
+        "DateTimeField": SafeDateTimeWidget,
+    }
+
+
 def modelresource_factory(model, resource_class=ModelResource):
     """
     Factory for creating ``ModelResource`` class for given Django model.
@@ -1084,6 +1105,10 @@ def modelresource_factory(model, resource_class=ModelResource):
 
     metaclass = ModelDeclarativeMetaclass
     return metaclass(class_name, (resource_class,), class_attrs)
+
+
+def safe_modelresource_factory(model):
+    return modelresource_factory(model, resource_class=SafeModelResource)
 
 
 import openpyxl
