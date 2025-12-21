@@ -68,6 +68,7 @@ class GroupeComptageAdmin(TimestampedAdmin):
         "campagne__nom",
     )
     raw_id_fields = ("campagne", "utilisateur")
+    filter_horizontal = ("lieux_autorises",)
     ordering = ("nom",)
     list_select_related = ("campagne", "utilisateur")
     fieldsets = (
@@ -75,15 +76,16 @@ class GroupeComptageAdmin(TimestampedAdmin):
             "Comptage",
             {
                 "fields": (
-                    "campagne",
-                    "nom",
-                    "utilisateur",
-                    "role",
-                    "appareil_identifiant",
-                    "pin_code",
-                    "commentaire",
-                ),
-            },
+                "campagne",
+                "nom",
+                "utilisateur",
+                "role",
+                "appareil_identifiant",
+                "pin_code",
+                "lieux_autorises",
+                "commentaire",
+            ),
+        },
         ),
         (
             "Suivi",

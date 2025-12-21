@@ -133,6 +133,16 @@ class GroupeComptage(ModeleHorodatage):
         verbose_name="Commentaire",
         help_text="Notes ou informations internes sur le groupe.",
     )
+    lieux_autorises = models.ManyToManyField(
+        "immo.Location",
+        blank=True,
+        related_name="groupes_autorises",
+        verbose_name="Lieux autorises",
+        help_text=(
+            "Lieux sur lesquels le groupe est autorise a operer. "
+            "Les sous-lieux des parents selectionnes sont aussi autorises."
+        ),
+    )
 
     class Meta:
         verbose_name = "Groupe de comptage"
@@ -141,6 +151,37 @@ class GroupeComptage(ModeleHorodatage):
 
     def __str__(self) -> str:
         return f"{self.nom} - {self.utilisateur_id}"
+
+    def get_lieux_autorises(self):
+        """Retourne les lieux autorises, en incluant les descendants."""
+        from immo.models import Location
+
+        racines = list(self.lieux_autorises.all())
+        if not racines:
+            return Location.objects.none()
+
+        ids_autorises = {loc.id for loc in racines}
+        a_parcourir = list(ids_autorises)
+
+        while a_parcourir:
+            enfants = list(
+                Location.objects.filter(parent_id__in=a_parcourir).values_list(
+                    "id", flat=True
+                )
+            )
+            nouveaux = [loc_id for loc_id in enfants if loc_id not in ids_autorises]
+            if not nouveaux:
+                break
+            ids_autorises.update(nouveaux)
+            a_parcourir = nouveaux
+
+        return Location.objects.filter(id__in=ids_autorises)
+
+    def is_lieu_autorise(self, lieu):
+        """Indique si un lieu est autorise pour ce groupe."""
+        if not lieu:
+            return False
+        return self.get_lieux_autorises().filter(id=lieu.id).exists()
 
 
 # -- Enregistrements de comptage -------------------------------------------

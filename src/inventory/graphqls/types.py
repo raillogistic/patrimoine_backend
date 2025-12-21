@@ -13,7 +13,10 @@ class CampagneInventaireCustomType(object):
 #######  GroupeComptage  #########
 
 class GroupeComptageCustomType(object):
-    pass
+    lieux_autorises = graphene.List("libs.graphql.schema.types.LocationType")
+
+    def resolve_lieux_autorises(self, info):
+        return self.get_lieux_autorises()
 
 #######  EnregistrementInventaire  #########
 

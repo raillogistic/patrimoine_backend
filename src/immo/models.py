@@ -73,10 +73,13 @@ class Affectation(models.Model):
     )  # Field name made lowercase.
 
     @property
-    def desc(self):
+    def designation(self):
         return _join_desc_parts(
             self.number, self.article, self.department, self.location, self.employer
         )
+
+    def __str__(self):
+        return str(self.designation)
 
     class Meta:
         managed = False
@@ -110,8 +113,11 @@ class Amortization(models.Model):
     )  # Field name made lowercase.
 
     @property
-    def desc(self):
+    def designation(self):
         return _join_desc_parts(self.year, self.article, self.depreciationamount)
+
+    def __str__(self):
+        return str(self.designation)
 
     class Meta:
         managed = False
@@ -150,8 +156,11 @@ class Appliance(models.Model):
     )  # Field name made lowercase.
 
     @property
-    def desc(self):
+    def designation(self):
         return _join_desc_parts(self.brand, self.model, self.article)
+
+    def __str__(self):
+        return str(self.designation)
 
     class Meta:
         managed = False
@@ -236,6 +245,9 @@ class Article(models.Model):
         db_column="isExited", verbose_name="est sorti"
     )  # Field name made lowercase.
 
+    def __str__(self):
+        return _join_desc_parts(self.code, self.desc)
+
     class Meta:
         managed = True
         db_table = "Article"
@@ -261,8 +273,11 @@ class Articleexitreason(models.Model):
     )  # Field name made lowercase.
 
     @property
-    def desc(self):
+    def designation(self):
         return _join_desc_parts(self.article, self.exitreason)
+
+    def __str__(self):
+        return str(self.designation)
 
     class Meta:
         managed = False
@@ -288,8 +303,11 @@ class Block(models.Model):
     )  # Field name made lowercase.
 
     @property
-    def desc(self):
-        return _join_desc_parts(self.blockname, self.description)
+    def designation(self):
+        return _join_desc_parts(self.blockname, self.desc)
+
+    def __str__(self):
+        return str(self.designation)
 
     class Meta:
         managed = False
@@ -347,13 +365,16 @@ class Construction(models.Model):
     )  # Field name made lowercase.
 
     @property
-    def desc(self):
+    def designation(self):
         return _join_desc_parts(
             self.constructiontype,
             self.constructionmaterial,
             self.constructionlocation,
             self.article,
         )
+
+    def __str__(self):
+        return str(self.designation)
 
     class Meta:
         managed = False
@@ -384,8 +405,11 @@ class Department(models.Model):
     )  # Field name made lowercase.
 
     @property
-    def desc(self):
-        return _join_desc_parts(self.departmentname, self.description)
+    def designation(self):
+        return _join_desc_parts(self.departmentname, self.desc)
+
+    def __str__(self):
+        return str(self.designation)
 
     class Meta:
         managed = False
@@ -415,8 +439,11 @@ class Departmenthistory(models.Model):
     )  # Field name made lowercase.
 
     @property
-    def desc(self):
+    def designation(self):
         return _join_desc_parts(self.oldname, self.newname)
+
+    def __str__(self):
+        return str(self.designation)
 
     class Meta:
         managed = False
@@ -460,8 +487,11 @@ class Electronics(models.Model):
     )  # Field name made lowercase.
 
     # @property
-    # def desc(self):
+    # def designation(self):
     #     return _join_desc_parts(self.brand, self.model, self.serialnumber, self.article)
+
+    def __str__(self):
+        return _join_desc_parts(self.brand, self.model, self.serialnumber, self.article)
 
     class Meta:
         managed = False
@@ -494,8 +524,11 @@ class Employer(models.Model):
     )  # Field name made lowercase.
 
     @property
-    def desc(self):
+    def designation(self):
         return _join_desc_parts(self.employername, self.department)
+
+    def __str__(self):
+        return str(self.designation)
 
     class Meta:
         managed = False
@@ -519,8 +552,11 @@ class Exitreason(models.Model):
     )  # Field name made lowercase.
 
     @property
-    def desc(self):
-        return _join_desc_parts(self.title, self.description)
+    def designation(self):
+        return _join_desc_parts(self.title, self.desc)
+
+    def __str__(self):
+        return str(self.designation)
 
     class Meta:
         managed = False
@@ -533,7 +569,11 @@ class Family(models.Model):
     code = models.CharField(max_length=300, verbose_name="code")
     familyname = models.TextField(verbose_name="nom de la famille")
     desc = models.CharField(
-        max_length=500, blank=True, null=True, verbose_name="description"
+        max_length=500,
+        blank=True,
+        null=True,
+        verbose_name="description",
+        db_column="description",
     )
     user = models.ForeignKey(
         "OldUser", models.DO_NOTHING, db_column="userId", verbose_name="utilisateur"
@@ -549,8 +589,11 @@ class Family(models.Model):
     )  # This field type is a guess.
 
     @property
-    def desc(self):
+    def designation(self):
         return _join_desc_parts(self.code, self.familyname)
+
+    def __str__(self):
+        return str(self.designation)
 
     class Meta:
         managed = False
@@ -570,8 +613,11 @@ class File(models.Model):
     )  # Field name made lowercase.
 
     @property
-    def desc(self):
+    def designation(self):
         return _join_desc_parts(self.filename)
+
+    def __str__(self):
+        return str(self.designation)
 
     class Meta:
         managed = False
@@ -587,8 +633,11 @@ class Financingmethod(models.Model):
     )  # Field name made lowercase.
 
     @property
-    def desc(self):
+    def designation(self):
         return _join_desc_parts(self.method)
+
+    def __str__(self):
+        return str(self.designation)
 
     class Meta:
         managed = False
@@ -604,8 +653,11 @@ class Fueltype(models.Model):
     )  # Field name made lowercase.
 
     @property
-    def desc(self):
+    def designation(self):
         return _join_desc_parts(self.gaztype)
+
+    def __str__(self):
+        return str(self.designation)
 
     class Meta:
         managed = False
@@ -637,8 +689,11 @@ class Furniture(models.Model):
     )  # Field name made lowercase.
 
     @property
-    def desc(self):
+    def designation(self):
         return _join_desc_parts(self.brand, self.style, self.material, self.article)
+
+    def __str__(self):
+        return str(self.designation)
 
     class Meta:
         managed = False
@@ -697,8 +752,11 @@ class Land(models.Model):
     )  # Field name made lowercase.
 
     @property
-    def desc(self):
+    def designation(self):
         return _join_desc_parts(self.landtype, self.location, self.article)
+
+    def __str__(self):
+        return str(self.designation)
 
     class Meta:
         managed = False
@@ -710,7 +768,11 @@ class Land(models.Model):
 class Location(models.Model):
     locationname = models.CharField(max_length=150, verbose_name="nom de localisation")
     desc = models.CharField(
-        max_length=500, blank=True, null=True, verbose_name="description"
+        max_length=500,
+        blank=True,
+        null=True,
+        verbose_name="description",
+        db_column="description",
     )
     createdat = models.DateTimeField(
         db_column="createdAt", verbose_name="date de creation"
@@ -736,8 +798,11 @@ class Location(models.Model):
     )
 
     @property
-    def desc(self):
-        return _join_desc_parts(self.locationname, self.description)
+    def designation(self):
+        return _join_desc_parts(self.locationname, self.desc)
+
+    def __str__(self):
+        return str(self.designation)
 
     class Meta:
         managed = True
@@ -778,10 +843,13 @@ class Machinery(models.Model):
     )  # Field name made lowercase.
 
     @property
-    def desc(self):
+    def designation(self):
         return _join_desc_parts(
             self.machinetype, self.manufacturer, self.model, self.article
         )
+
+    def __str__(self):
+        return str(self.designation)
 
     class Meta:
         managed = False
@@ -825,10 +893,13 @@ class Medicalsupply(models.Model):
     )  # Field name made lowercase.
 
     @property
-    def desc(self):
+    def designation(self):
         return _join_desc_parts(
             self.manufacturer, self.batchnumber, self.expirationdate, self.article
         )
+
+    def __str__(self):
+        return str(self.designation)
 
     class Meta:
         managed = False
@@ -867,8 +938,11 @@ class Notification(models.Model):
     )  # Field name made lowercase.
 
     @property
-    def desc(self):
+    def designation(self):
         return _join_desc_parts(self.message)
+
+    def __str__(self):
+        return str(self.designation)
 
     class Meta:
         managed = False
@@ -890,8 +964,11 @@ class Refreshtoken(models.Model):
     )  # Field name made lowercase.
 
     @property
-    def desc(self):
+    def designation(self):
         return _join_desc_parts(self.token)
+
+    def __str__(self):
+        return str(self.designation)
 
     class Meta:
         managed = False
@@ -903,7 +980,11 @@ class Refreshtoken(models.Model):
 class Room(models.Model):
     roomname = models.CharField(max_length=150, verbose_name="nom de la salle")
     desc = models.CharField(
-        max_length=500, blank=True, null=True, verbose_name="description"
+        max_length=500,
+        blank=True,
+        null=True,
+        verbose_name="description",
+        db_column="description",
     )
     block = models.ForeignKey(
         Block, models.DO_NOTHING, db_column="blockId", verbose_name="bloc"
@@ -913,8 +994,11 @@ class Room(models.Model):
     )  # Field name made lowercase.
 
     @property
-    def desc(self):
+    def designation(self):
         return _join_desc_parts(self.roomname, self.block)
+
+    def __str__(self):
+        return str(self.designation)
 
     class Meta:
         managed = False
@@ -959,10 +1043,13 @@ class Software(models.Model):
     )  # Field name made lowercase.
 
     @property
-    def desc(self):
+    def designation(self):
         return _join_desc_parts(
             self.licensekey, self.version, self.platform, self.article
         )
+
+    def __str__(self):
+        return str(self.designation)
 
     class Meta:
         managed = False
@@ -993,10 +1080,13 @@ class Stationery(models.Model):
     )  # Field name made lowercase.
 
     @property
-    def desc(self):
+    def designation(self):
         return _join_desc_parts(
             self.brand, self.type, self.color, self.material, self.article
         )
+
+    def __str__(self):
+        return str(self.designation)
 
     class Meta:
         managed = False
@@ -1009,7 +1099,11 @@ class Subfamily(models.Model):
     code = models.CharField(max_length=150, verbose_name="code")
     subfamilyname = models.TextField(verbose_name="nom de la sous-famille")
     desc = models.CharField(
-        max_length=500, blank=True, null=True, verbose_name="description"
+        max_length=500,
+        blank=True,
+        null=True,
+        verbose_name="description",
+        db_column="description",
     )
     family = models.ForeignKey(
         Family,
@@ -1024,8 +1118,11 @@ class Subfamily(models.Model):
     )  # Field name made lowercase.
 
     @property
-    def desc(self):
+    def designation(self):
         return _join_desc_parts(self.code, self.subfamilyname, self.family)
+
+    def __str__(self):
+        return str(self.designation)
 
     class Meta:
         managed = False
@@ -1054,8 +1151,11 @@ class Supplier(models.Model):
     )  # Field name made lowercase.
 
     @property
-    def desc(self):
+    def designation(self):
         return _join_desc_parts(self.socialreason)
+
+    def __str__(self):
+        return str(self.designation)
 
     class Meta:
         managed = False
@@ -1098,10 +1198,13 @@ class Tool(models.Model):
     )  # Field name made lowercase.
 
     @property
-    def desc(self):
+    def designation(self):
         return _join_desc_parts(
             self.tooltype, self.brand, self.powersource, self.article
         )
+
+    def __str__(self):
+        return str(self.designation)
 
     class Meta:
         managed = False
@@ -1154,8 +1257,11 @@ class OldUser(models.Model):
     )
 
     @property
-    def desc(self):
+    def designation(self):
         return _join_desc_parts(self.fullname, self.name, self.email)
+
+    def __str__(self):
+        return str(self.designation)
 
     class Meta:
         managed = False
@@ -1221,8 +1327,11 @@ class Vehicle(models.Model):
     )  # Field name made lowercase.
 
     @property
-    def desc(self):
+    def designation(self):
         return _join_desc_parts(self.licenseplate, self.vehiclemodel, self.vehicletype)
+
+    def __str__(self):
+        return str(self.designation)
 
     class Meta:
         managed = False
@@ -1238,8 +1347,11 @@ class Vehiclemodel(models.Model):
     )  # Field name made lowercase.
 
     @property
-    def desc(self):
+    def designation(self):
         return _join_desc_parts(self.model)
+
+    def __str__(self):
+        return str(self.designation)
 
     class Meta:
         managed = False
@@ -1261,8 +1373,11 @@ class Vehicletype(models.Model):
     )  # Field name made lowercase.
 
     @property
-    def desc(self):
+    def designation(self):
         return _join_desc_parts(self.type, self.vehiclemodel)
+
+    def __str__(self):
+        return str(self.designation)
 
     class Meta:
         managed = False

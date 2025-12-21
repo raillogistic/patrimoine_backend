@@ -2,6 +2,7 @@
 
 from django.db.models import Q
 from immo import models
+from inventory.models import GroupeComptage
 from django_filters import FilterSet,CharFilter,BooleanFilter
 
 
@@ -189,7 +190,18 @@ class LandCustomFilters(FilterSet):
 location_quick = {}
 location_filters = {}
 class LocationCustomFilters(FilterSet):
-    pass
+    for_group = CharFilter(method="resolve_for_group")
+
+    def resolve_for_group(self, queryset, name, value):
+        if not value:
+            return queryset
+
+        group = GroupeComptage.objects.filter(id=value).first()
+        if not group:
+            return queryset.none()
+
+        allowed_ids = group.get_lieux_autorises().values_list("id", flat=True)
+        return queryset.filter(id__in=allowed_ids)
 
 
 #######  Machinery  #########
