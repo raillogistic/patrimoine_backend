@@ -162,7 +162,9 @@ class Appliance(models.Model):
 
 class Article(models.Model):
     code = models.CharField(max_length=300, verbose_name="code")
-    desc = models.CharField(max_length=500, verbose_name="description")
+    desc = models.CharField(
+        max_length=500, verbose_name="description", db_column="description"
+    )
     acquiringdate = models.DateField(
         verbose_name="date d acquisition", blank=True, null=True
     )
@@ -234,12 +236,8 @@ class Article(models.Model):
         db_column="isExited", verbose_name="est sorti"
     )  # Field name made lowercase.
 
-    @property
-    def desc(self):
-        return _join_desc_parts(self.code, self.description)
-
     class Meta:
-        managed = False
+        managed = True
         db_table = "Article"
         verbose_name = "article"
         verbose_name_plural = "articles"
@@ -461,9 +459,9 @@ class Electronics(models.Model):
         "OldUser", models.DO_NOTHING, db_column="userId", verbose_name="utilisateur"
     )  # Field name made lowercase.
 
-    @property
-    def desc(self):
-        return _join_desc_parts(self.brand, self.model, self.serialnumber, self.article)
+    # @property
+    # def desc(self):
+    #     return _join_desc_parts(self.brand, self.model, self.serialnumber, self.article)
 
     class Meta:
         managed = False
@@ -730,6 +728,7 @@ class Location(models.Model):
         blank=True,
         null=True,
         verbose_name="parent",
+        related_name="children",
     )  # Field name made lowercase.
     type = models.TextField(verbose_name="type")  # This field type is a guess.
     barcode = models.CharField(
@@ -741,7 +740,7 @@ class Location(models.Model):
         return _join_desc_parts(self.locationname, self.description)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = "Location"
         verbose_name = "localisation"
         verbose_name_plural = "localisations"

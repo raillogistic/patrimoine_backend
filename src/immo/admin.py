@@ -1,8 +1,12 @@
 from django.apps import apps
 from django.contrib import admin
+from django.db import models
+from import_export.admin import ImportExportModelAdmin
+
+from .models import Article, Location
 
 
-class ReadOnlyModelAdmin(admin.ModelAdmin):
+class ReadOnlyModelAdmin(ImportExportModelAdmin):
     def has_add_permission(self, request):
         return False
 
@@ -13,11 +17,174 @@ class ReadOnlyModelAdmin(admin.ModelAdmin):
         return False
 
 
+def _field_is_relation(field):
+    return isinstance(field, (models.ForeignKey, models.OneToOneField))
+
+
+def _field_is_filterable(field):
+    return isinstance(
+        field,
+        (
+            models.BooleanField,
+            models.DateField,
+            models.DateTimeField,
+            models.ForeignKey,
+            models.OneToOneField,
+        ),
+    )
+
+
+def _field_is_searchable(field):
+    return isinstance(field, (models.CharField, models.TextField))
+
+
+def _build_list_display(model):
+    field_names = [field.name for field in model._meta.fields]
+    if "id" in field_names:
+        field_names.remove("id")
+        field_names.insert(0, "id")
+    return tuple(field_names[:8] or ["id"])
+
+
+def _build_search_fields(model):
+    return tuple(
+        field.name for field in model._meta.fields if _field_is_searchable(field)
+    )
+
+
+def _build_list_filter(model):
+    return tuple(
+        field.name for field in model._meta.fields if _field_is_filterable(field)
+    )
+
+
+def _build_raw_id_fields(model):
+    return tuple(
+        field.name for field in model._meta.fields if _field_is_relation(field)
+    )
+
+
+def _build_list_select_related(model):
+    return tuple(
+        field.name for field in model._meta.fields if _field_is_relation(field)
+    )
+
+
+def _build_readonly_fields(model):
+    field_names = [field.name for field in model._meta.fields]
+    field_names.extend(field.name for field in model._meta.many_to_many)
+    return tuple(field_names)
+
+
+def _build_fieldsets(model):
+    relation_fields = [
+        field.name for field in model._meta.fields if _field_is_relation(field)
+    ]
+    data_fields = [
+        field.name for field in model._meta.fields if field.name not in relation_fields
+    ]
+    fieldsets = []
+    if relation_fields:
+        fieldsets.append(("Relations", {"fields": tuple(relation_fields)}))
+    if data_fields:
+        fieldsets.append(("Donnees", {"fields": tuple(data_fields)}))
+    return tuple(fieldsets)
+
+
+def _build_admin_class(model):
+    attrs = {
+        "list_display": _build_list_display(model),
+        "search_fields": _build_search_fields(model),
+        "list_filter": _build_list_filter(model),
+        "raw_id_fields": _build_raw_id_fields(model),
+        "list_select_related": _build_list_select_related(model),
+        "readonly_fields": _build_readonly_fields(model),
+        "fieldsets": _build_fieldsets(model),
+    }
+    return type(f"{model.__name__}Admin", (ReadOnlyModelAdmin,), attrs)
+
+
+class ArticleAdmin(ImportExportModelAdmin):
+    list_display = (
+        "code",
+        "desc",
+        "family",
+        "supplier",
+        "quantity",
+        "type",
+        "isexited",
+        "acquiringdate",
+    )
+    search_fields = (
+        "code",
+        "desc",
+        "serialnumber",
+        "references",
+        "invoice",
+        "deliverynote",
+        "financingmethod",
+    )
+    list_filter = (
+        "type",
+        "isexited",
+        "acquiringdate",
+        "supplier",
+        "family",
+        "createdat",
+    )
+    raw_id_fields = ("supplier", "family", "user")
+    list_select_related = ("supplier", "family", "user")
+    date_hierarchy = "createdat"
+    fieldsets = (
+        ("Identification", {"fields": ("code", "desc", "type", "serialnumber", "references")} ),
+        ("Achat", {"fields": ("acquiringdate", "deliverynote", "invoice", "financingmethod", "supplier")} ),
+        ("Finances", {"fields": ("beginningfiscalprice", "totalfiscalprice", "amortizationyears")} ),
+        ("Stock", {"fields": ("quantity", "isexited", "exitedat")} ),
+        ("Classification", {"fields": ("family",)} ),
+        ("Notes", {"fields": ("observation",)} ),
+        ("Audit", {"fields": ("user", "createdat", "updatedat")} ),
+    )
+
+
+class LocationAdmin(ImportExportModelAdmin):
+    list_display = (
+        "locationname",
+        "type",
+        "parent",
+        "barcode",
+        "user",
+        "createdat",
+    )
+    search_fields = (
+        "locationname",
+        "desc",
+        "barcode",
+        "type",
+    )
+    list_filter = (
+        "type",
+        "parent",
+        "createdat",
+        "user",
+    )
+    raw_id_fields = ("parent", "user")
+    list_select_related = ("parent", "user")
+    date_hierarchy = "createdat"
+    fieldsets = (
+        ("Identification", {"fields": ("locationname", "type", "barcode")} ),
+        ("Hierarchie", {"fields": ("parent",)} ),
+        ("Description", {"fields": ("desc",)} ),
+        ("Audit", {"fields": ("user", "createdat", "updatedat")} ),
+    )
+
+
 app_models = apps.get_app_config("immo").get_models()
 
-# Register managed=False models as read-only to prevent writes from admin.
+admin.site.register(Article, ArticleAdmin)
+admin.site.register(Location, LocationAdmin)
+
 for model in [m for m in app_models]:
-    if not model._meta.managed:
-        admin.site.register(model, ReadOnlyModelAdmin)
-    else:
-        admin.site.register(model)
+    if model in (Article, Location):
+        continue
+    admin_class = _build_admin_class(model)
+    admin.site.register(model, admin_class)

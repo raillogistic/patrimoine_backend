@@ -32,6 +32,9 @@ class ModeleHorodatage(models.Model):
     class Meta:
         abstract = True
 
+    def __str__(self) -> str:
+        return f"{self.__class__.__name__} #{self.pk}"
+
 
 # -- Campagnes ---------------------------------------------------------------
 class CampagneInventaire(ModeleHorodatage):
@@ -144,6 +147,11 @@ class GroupeComptage(ModeleHorodatage):
 class EnregistrementInventaire(ModeleHorodatage):
     """Enregistre un scan d'article dans un lieu selectionne."""
 
+    class EtatMateriel(models.TextChoices):
+        bien = "BIEN", "Bien"
+        moyenne = "MOYENNE", "Moyenne"
+        hors_service = "HORS_SERVICE", "Hors service"
+
     campagne = models.ForeignKey(
         CampagneInventaire,
         on_delete=models.PROTECT,
@@ -209,6 +217,15 @@ class EnregistrementInventaire(ModeleHorodatage):
         blank=True,
         verbose_name="Commentaire",
         help_text="Notes complementaires associees a l'enregistrement.",
+    )
+    # etat du materiel
+    etat = models.CharField(
+        max_length=20,
+        choices=EtatMateriel.choices,
+        null=True,
+        blank=True,
+        verbose_name="Etat du materiel",
+        help_text="Etat du materiel lors de l'enregistrement.",
     )
 
     class Meta:

@@ -40,7 +40,11 @@ FILE_UPLOAD_MAX_MEMORY_SIZE = 62428800  # 50MB (adjust as needed)
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
-CSRF_TRUSTED_ORIGINS = ["http://*"]
+CSRF_TRUSTED_ORIGINS = [
+    "http://*",
+    "http://192.168.0.16:7777",
+    "http://41.111.138.26:7777",
+]
 DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
 # Application definition
@@ -55,6 +59,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django.contrib.humanize",
+    "import_export",
+    "import_export",
     "graphene_django",
     "django_extensions",
     "django_filters",
@@ -142,6 +148,7 @@ DATABASES = {
         default="postgresql://mkhaled:KhaledRM250@localhost:5432/inventory_system",
     )
 }
+
 DATABASES["default"]["ENGINE"] = "libs.db.backends.postgresql"
 
 GRAPHENE_DJANGO_FILTER = {
