@@ -1,50 +1,15 @@
-
-
 from django.db.models import Q
 from immo import models
 from inventory.models import GroupeComptage
-from django_filters import FilterSet,CharFilter,BooleanFilter
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+from django_filters import FilterSet, CharFilter, BooleanFilter
 
 
 #######  Affectation  #########
 
 affectation_quick = {}
 affectation_filters = {}
+
+
 class AffectationCustomFilters(FilterSet):
     pass
 
@@ -53,6 +18,8 @@ class AffectationCustomFilters(FilterSet):
 
 amortization_quick = {}
 amortization_filters = {}
+
+
 class AmortizationCustomFilters(FilterSet):
     pass
 
@@ -61,6 +28,8 @@ class AmortizationCustomFilters(FilterSet):
 
 appliance_quick = {}
 appliance_filters = {}
+
+
 class ApplianceCustomFilters(FilterSet):
     pass
 
@@ -69,6 +38,8 @@ class ApplianceCustomFilters(FilterSet):
 
 article_quick = {}
 article_filters = {}
+
+
 class ArticleCustomFilters(FilterSet):
     pass
 
@@ -77,6 +48,8 @@ class ArticleCustomFilters(FilterSet):
 
 articleexitreason_quick = {}
 articleexitreason_filters = {}
+
+
 class ArticleexitreasonCustomFilters(FilterSet):
     pass
 
@@ -85,6 +58,8 @@ class ArticleexitreasonCustomFilters(FilterSet):
 
 block_quick = {}
 block_filters = {}
+
+
 class BlockCustomFilters(FilterSet):
     pass
 
@@ -93,6 +68,8 @@ class BlockCustomFilters(FilterSet):
 
 construction_quick = {}
 construction_filters = {}
+
+
 class ConstructionCustomFilters(FilterSet):
     pass
 
@@ -101,6 +78,8 @@ class ConstructionCustomFilters(FilterSet):
 
 department_quick = {}
 department_filters = {}
+
+
 class DepartmentCustomFilters(FilterSet):
     pass
 
@@ -109,6 +88,8 @@ class DepartmentCustomFilters(FilterSet):
 
 departmenthistory_quick = {}
 departmenthistory_filters = {}
+
+
 class DepartmenthistoryCustomFilters(FilterSet):
     pass
 
@@ -117,6 +98,8 @@ class DepartmenthistoryCustomFilters(FilterSet):
 
 electronics_quick = {}
 electronics_filters = {}
+
+
 class ElectronicsCustomFilters(FilterSet):
     pass
 
@@ -125,6 +108,8 @@ class ElectronicsCustomFilters(FilterSet):
 
 employer_quick = {}
 employer_filters = {}
+
+
 class EmployerCustomFilters(FilterSet):
     pass
 
@@ -133,6 +118,8 @@ class EmployerCustomFilters(FilterSet):
 
 exitreason_quick = {}
 exitreason_filters = {}
+
+
 class ExitreasonCustomFilters(FilterSet):
     pass
 
@@ -141,6 +128,8 @@ class ExitreasonCustomFilters(FilterSet):
 
 family_quick = {}
 family_filters = {}
+
+
 class FamilyCustomFilters(FilterSet):
     pass
 
@@ -149,6 +138,8 @@ class FamilyCustomFilters(FilterSet):
 
 file_quick = {}
 file_filters = {}
+
+
 class FileCustomFilters(FilterSet):
     pass
 
@@ -157,6 +148,8 @@ class FileCustomFilters(FilterSet):
 
 financingmethod_quick = {}
 financingmethod_filters = {}
+
+
 class FinancingmethodCustomFilters(FilterSet):
     pass
 
@@ -165,6 +158,8 @@ class FinancingmethodCustomFilters(FilterSet):
 
 fueltype_quick = {}
 fueltype_filters = {}
+
+
 class FueltypeCustomFilters(FilterSet):
     pass
 
@@ -173,6 +168,8 @@ class FueltypeCustomFilters(FilterSet):
 
 furniture_quick = {}
 furniture_filters = {}
+
+
 class FurnitureCustomFilters(FilterSet):
     pass
 
@@ -181,6 +178,8 @@ class FurnitureCustomFilters(FilterSet):
 
 land_quick = {}
 land_filters = {}
+
+
 class LandCustomFilters(FilterSet):
     pass
 
@@ -189,6 +188,9 @@ class LandCustomFilters(FilterSet):
 
 location_quick = {}
 location_filters = {}
+from graphql_relay import from_global_id
+
+
 class LocationCustomFilters(FilterSet):
     for_group = CharFilter(method="resolve_for_group")
 
@@ -196,7 +198,7 @@ class LocationCustomFilters(FilterSet):
         if not value:
             return queryset
 
-        group = GroupeComptage.objects.filter(id=value).first()
+        group = GroupeComptage.objects.filter(id=from_global_id(value)[1]).first()
         if not group:
             return queryset.none()
 
@@ -208,6 +210,8 @@ class LocationCustomFilters(FilterSet):
 
 machinery_quick = {}
 machinery_filters = {}
+
+
 class MachineryCustomFilters(FilterSet):
     pass
 
@@ -216,6 +220,8 @@ class MachineryCustomFilters(FilterSet):
 
 medicalsupply_quick = {}
 medicalsupply_filters = {}
+
+
 class MedicalsupplyCustomFilters(FilterSet):
     pass
 
@@ -224,6 +230,8 @@ class MedicalsupplyCustomFilters(FilterSet):
 
 notification_quick = {}
 notification_filters = {}
+
+
 class NotificationCustomFilters(FilterSet):
     pass
 
@@ -232,6 +240,8 @@ class NotificationCustomFilters(FilterSet):
 
 refreshtoken_quick = {}
 refreshtoken_filters = {}
+
+
 class RefreshtokenCustomFilters(FilterSet):
     pass
 
@@ -240,6 +250,8 @@ class RefreshtokenCustomFilters(FilterSet):
 
 room_quick = {}
 room_filters = {}
+
+
 class RoomCustomFilters(FilterSet):
     pass
 
@@ -248,6 +260,8 @@ class RoomCustomFilters(FilterSet):
 
 software_quick = {}
 software_filters = {}
+
+
 class SoftwareCustomFilters(FilterSet):
     pass
 
@@ -256,6 +270,8 @@ class SoftwareCustomFilters(FilterSet):
 
 stationery_quick = {}
 stationery_filters = {}
+
+
 class StationeryCustomFilters(FilterSet):
     pass
 
@@ -264,6 +280,8 @@ class StationeryCustomFilters(FilterSet):
 
 subfamily_quick = {}
 subfamily_filters = {}
+
+
 class SubfamilyCustomFilters(FilterSet):
     pass
 
@@ -272,6 +290,8 @@ class SubfamilyCustomFilters(FilterSet):
 
 supplier_quick = {}
 supplier_filters = {}
+
+
 class SupplierCustomFilters(FilterSet):
     pass
 
@@ -280,6 +300,8 @@ class SupplierCustomFilters(FilterSet):
 
 tool_quick = {}
 tool_filters = {}
+
+
 class ToolCustomFilters(FilterSet):
     pass
 
@@ -288,6 +310,8 @@ class ToolCustomFilters(FilterSet):
 
 olduser_quick = {}
 olduser_filters = {}
+
+
 class OldUserCustomFilters(FilterSet):
     pass
 
@@ -296,6 +320,8 @@ class OldUserCustomFilters(FilterSet):
 
 vehicle_quick = {}
 vehicle_filters = {}
+
+
 class VehicleCustomFilters(FilterSet):
     pass
 
@@ -304,6 +330,8 @@ class VehicleCustomFilters(FilterSet):
 
 vehiclemodel_quick = {}
 vehiclemodel_filters = {}
+
+
 class VehiclemodelCustomFilters(FilterSet):
     pass
 
@@ -312,6 +340,7 @@ class VehiclemodelCustomFilters(FilterSet):
 
 vehicletype_quick = {}
 vehicletype_filters = {}
+
+
 class VehicletypeCustomFilters(FilterSet):
     pass
-        

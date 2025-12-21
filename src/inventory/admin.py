@@ -118,6 +118,8 @@ class EnregistrementInventaireAdmin(TimestampedAdmin):
         "groupe__nom",
         "campagne__code_campagne",
         "campagne__nom",
+        "serial_number",
+        "observation",
     )
     raw_id_fields = ("campagne", "groupe", "lieu", "departement", "article")
     ordering = ("-capture_le",)
@@ -134,6 +136,7 @@ class EnregistrementInventaireAdmin(TimestampedAdmin):
                     "departement",
                     "article",
                     "code_article",
+                    "serial_number",
                 ),
             },
         ),
@@ -146,7 +149,7 @@ class EnregistrementInventaireAdmin(TimestampedAdmin):
         (
             "Notes",
             {
-                "fields": ("commentaire",),
+                "fields": ("commentaire", "observation"),
             },
         ),
         (

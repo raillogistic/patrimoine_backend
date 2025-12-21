@@ -193,6 +193,10 @@ class EnregistrementInventaire(ModeleHorodatage):
         moyenne = "MOYENNE", "Moyenne"
         hors_service = "HORS_SERVICE", "Hors service"
 
+    observation = models.TextField(null=True, blank=True, verbose_name="Observation")
+    serial_number = models.CharField(
+        max_length=100, null=True, blank=True, verbose_name="Numéro de série"
+    )
     campagne = models.ForeignKey(
         CampagneInventaire,
         on_delete=models.PROTECT,
@@ -258,6 +262,19 @@ class EnregistrementInventaire(ModeleHorodatage):
         blank=True,
         verbose_name="Commentaire",
         help_text="Notes complementaires associees a l'enregistrement.",
+    )
+    observation = models.TextField(
+        blank=True,
+        null=True,
+        verbose_name="Observation",
+        help_text="Observation complementaire associee a l'enregistrement.",
+    )
+    serial_number = models.CharField(
+        max_length=100,
+        blank=True,
+        null=True,
+        verbose_name="Numero de serie",
+        help_text="Numero de serie associe a l'article scanne.",
     )
     # etat du materiel
     etat = models.CharField(
