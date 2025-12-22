@@ -292,6 +292,20 @@ class EnregistrementInventaire(ModeleHorodatage):
         verbose_name="Image",
         help_text="Image associee a l'enregistrement.",
     )
+    image2 = models.ImageField(
+        upload_to="inventaire/images",
+        blank=True,
+        null=True,
+        verbose_name="Image",
+        help_text="Image associee a l'enregistrement.",
+    )
+    image3 = models.ImageField(
+        upload_to="inventaire/images",
+        blank=True,
+        null=True,
+        verbose_name="Image",
+        help_text="Image associee a l'enregistrement.",
+    )
     custom_desc = models.TextField(
         blank=True,
         null=True,
