@@ -1,5 +1,11 @@
 
+import base64
+import binascii
+import json
+import uuid
+
 import graphene
+from django.core.files.base import ContentFile
 from django.db import transaction
 
 from libs.graphql.schema.serializers import EnregistrementInventaireSerializer
@@ -61,6 +67,39 @@ class SyncInventoryScans(graphene.Mutation):
                 messages.append(f"{field}: {details}")
         return messages
 
+    @staticmethod
+    def _parse_capture_payload(payload):
+        if not payload:
+            return None
+        if isinstance(payload, dict):
+            return payload
+        if isinstance(payload, str):
+            try:
+                return json.loads(payload)
+            except json.JSONDecodeError:
+                return None
+        return None
+
+    @staticmethod
+    def _build_image_file(payload):
+        if not isinstance(payload, dict):
+            return None
+
+        data = payload.get("data_base64") or payload.get("data")
+        if not data:
+            return None
+
+        if isinstance(data, str) and "," in data:
+            data = data.split(",", 1)[1]
+
+        filename = payload.get("filename") or f"scan-{uuid.uuid4().hex}.jpg"
+        try:
+            decoded = base64.b64decode(data)
+        except (binascii.Error, TypeError, ValueError):
+            return None
+
+        return ContentFile(decoded, name=filename)
+
     def mutate(self, info, input):
         if not input:
             return SyncInventoryScans(
@@ -75,6 +114,15 @@ class SyncInventoryScans(graphene.Mutation):
             local_id = payload.pop("local_id", None)
 
             cleaned = {key: value for key, value in payload.items() if value is not None}
+            capture_payload = self._parse_capture_payload(
+                cleaned.get("donnees_capture")
+            )
+            if capture_payload is not None:
+                cleaned["donnees_capture"] = capture_payload
+                image_payload = capture_payload.get("image")
+                image_file = self._build_image_file(image_payload)
+                if image_file is not None:
+                    cleaned["image"] = image_file
 
             serializer = EnregistrementInventaireSerializer(data=cleaned)
             if serializer.is_valid():
