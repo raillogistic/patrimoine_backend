@@ -39,9 +39,29 @@ class ApplianceCustomFilters(FilterSet):
 article_quick = {}
 article_filters = {}
 
+from django_filters import FilterSet, CharFilter
+from django.db.models import OuterRef, Subquery
+
 
 class ArticleCustomFilters(FilterSet):
-    pass
+    current_location = CharFilter(method="filter_current_location")
+
+    def _with_latest_location_id(self, queryset):
+        """
+        Annotate each Article with _latest_location_id = location_id from its latest Affectation.
+        """
+        latest_location_id_sq = Subquery(
+            models.Affectation.objects.filter(article_id=OuterRef("pk"))
+            .order_by("-createdat")
+            .values("location_id")[:1]
+        )
+        return queryset.annotate(_latest_location_id=latest_location_id_sq)
+
+    def filter_current_location(self, queryset, name, value):
+        if value in (None, ""):
+            return queryset
+        qs = self._with_latest_location_id(queryset)
+        return qs.filter(_latest_location_id=value)
 
 
 #######  Articleexitreason  #########
@@ -204,6 +224,8 @@ class LocationCustomFilters(FilterSet):
 
         allowed_ids = group.get_lieux_autorises().values_list("id", flat=True)
         return queryset.filter(id__in=allowed_ids)
+
+    current_location = CharFilter(method="resolve_current_location")
 
 
 #######  Machinery  #########

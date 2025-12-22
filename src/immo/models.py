@@ -248,6 +248,13 @@ class Article(models.Model):
     def __str__(self):
         return _join_desc_parts(self.code, self.desc)
 
+    @property
+    def current_location(self):
+        affectation = self.affectation_set.order_by("-createdat").first()
+        if affectation and affectation.location:
+            return affectation.location
+        return None
+
     class Meta:
         managed = True
         db_table = "Article"

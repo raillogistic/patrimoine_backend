@@ -26,7 +26,10 @@ class ApplianceCustomType(object):
 
 
 class ArticleCustomType(object):
-    pass
+    current_location = graphene.Field("libs.graphql.schema.types.LocationType")
+
+    def resolve_current_location(self, info):
+        return self.current_location
 
 
 #######  Articleexitreason  #########
