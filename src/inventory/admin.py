@@ -100,6 +100,7 @@ class GroupeComptageAdmin(TimestampedAdmin):
 class EnregistrementInventaireAdmin(TimestampedAdmin):
     list_display = (
         "code_article",
+        "image",
         "campagne",
         "groupe",
         "lieu",
@@ -138,6 +139,8 @@ class EnregistrementInventaireAdmin(TimestampedAdmin):
                     "article",
                     "code_article",
                     "serial_number",
+                    "image",
+                    "custom_desc",
                 ),
             },
         ),

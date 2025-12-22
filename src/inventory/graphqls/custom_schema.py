@@ -100,7 +100,8 @@ class SyncInventoryScans(graphene.Mutation):
 
         return ContentFile(decoded, name=filename)
 
-    def mutate(self, info, input):
+    @staticmethod
+    def mutate(root, info, input):
         if not input:
             return SyncInventoryScans(
                 ok=True, message="Aucun scan a synchroniser.", results=[]
@@ -110,43 +111,56 @@ class SyncInventoryScans(graphene.Mutation):
         success_count = 0
 
         for item in input:
-            payload = dict(item)
-            local_id = payload.pop("local_id", None)
+            local_id = None
+            try:
+                payload = dict(item)
+                local_id = payload.pop("local_id", None)
 
-            cleaned = {key: value for key, value in payload.items() if value is not None}
-            capture_payload = self._parse_capture_payload(
-                cleaned.get("donnees_capture")
-            )
-            if capture_payload is not None:
-                cleaned["donnees_capture"] = capture_payload
-                image_payload = capture_payload.get("image")
-                image_file = self._build_image_file(image_payload)
-                if image_file is not None:
-                    cleaned["image"] = image_file
+                cleaned = {
+                    key: value for key, value in payload.items() if value is not None
+                }
+                capture_payload = SyncInventoryScans._parse_capture_payload(
+                    cleaned.get("donnees_capture")
+                )
+                if isinstance(capture_payload, dict):
+                    cleaned["donnees_capture"] = capture_payload
+                    image_payload = capture_payload.get("image")
+                    image_file = SyncInventoryScans._build_image_file(image_payload)
+                    if image_file is not None:
+                        cleaned["image"] = image_file
 
-            serializer = EnregistrementInventaireSerializer(data=cleaned)
-            if serializer.is_valid():
-                with transaction.atomic():
-                    instance = serializer.save()
+                serializer = EnregistrementInventaireSerializer(data=cleaned)
+                if serializer.is_valid():
+                    with transaction.atomic():
+                        instance = serializer.save()
+                    results.append(
+                        InventoryScanSyncResult(
+                            local_id=local_id,
+                            remote_id=instance.pk,
+                            ok=True,
+                            errors=[],
+                        )
+                    )
+                    success_count += 1
+                    continue
+
                 results.append(
                     InventoryScanSyncResult(
                         local_id=local_id,
-                        remote_id=instance.pk,
-                        ok=True,
-                        errors=[],
+                        remote_id=None,
+                        ok=False,
+                        errors=SyncInventoryScans._normalize_errors(serializer.errors),
                     )
                 )
-                success_count += 1
-                continue
-
-            results.append(
-                InventoryScanSyncResult(
-                    local_id=local_id,
-                    remote_id=None,
-                    ok=False,
-                    errors=self._normalize_errors(serializer.errors),
+            except Exception as exc:
+                results.append(
+                    InventoryScanSyncResult(
+                        local_id=local_id,
+                        remote_id=None,
+                        ok=False,
+                        errors=[f"{type(exc).__name__}: {exc}"],
+                    )
                 )
-            )
 
         message = (
             f"{success_count}/{len(input)} scans synchronises."
