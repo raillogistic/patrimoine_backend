@@ -124,10 +124,28 @@ class SyncInventoryScans(graphene.Mutation):
                 )
                 if isinstance(capture_payload, dict):
                     cleaned["donnees_capture"] = capture_payload
-                    image_payload = capture_payload.get("image")
-                    image_file = SyncInventoryScans._build_image_file(image_payload)
-                    if image_file is not None:
-                        cleaned["image"] = image_file
+                    image_payloads = []
+                    if isinstance(capture_payload.get("images"), list):
+                        image_payloads.extend(
+                            [item for item in capture_payload.get("images") if item]
+                        )
+                    else:
+                        image_payloads.extend(
+                            [
+                                capture_payload.get("image"),
+                                capture_payload.get("image2"),
+                                capture_payload.get("image3"),
+                            ]
+                        )
+
+                    for index, image_payload in enumerate(image_payloads[:3], start=1):
+                        image_file = SyncInventoryScans._build_image_file(
+                            image_payload
+                        )
+                        if image_file is None:
+                            continue
+                        field_name = "image" if index == 1 else f"image{index}"
+                        cleaned[field_name] = image_file
 
                 serializer = EnregistrementInventaireSerializer(data=cleaned)
                 if serializer.is_valid():

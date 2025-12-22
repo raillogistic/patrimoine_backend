@@ -100,7 +100,6 @@ class GroupeComptageAdmin(TimestampedAdmin):
 class EnregistrementInventaireAdmin(TimestampedAdmin):
     list_display = (
         "code_article",
-        "image",
         "campagne",
         "groupe",
         "lieu",
@@ -110,6 +109,9 @@ class EnregistrementInventaireAdmin(TimestampedAdmin):
         "etat",
         "capture_le",
         "source_scan",
+        "image",
+        "image2",
+        "image3",
     )
     list_filter = ("groupe__nom", "lieu")
     search_fields = (
