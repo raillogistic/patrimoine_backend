@@ -799,7 +799,9 @@ class Location(models.Model):
         verbose_name="parent",
         related_name="children",
     )  # Field name made lowercase.
-    type = models.TextField(verbose_name="type")  # This field type is a guess.
+    type = models.TextField(
+        verbose_name="type", null=True, blank=True, choices=(("bloc", "bloc"),)
+    )  # This field type is a guess.
     barcode = models.CharField(
         unique=True, max_length=300, blank=True, null=True, verbose_name="code barre"
     )
