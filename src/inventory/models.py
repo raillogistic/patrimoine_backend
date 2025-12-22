@@ -285,6 +285,19 @@ class EnregistrementInventaire(ModeleHorodatage):
         verbose_name="Etat du materiel",
         help_text="Etat du materiel lors de l'enregistrement.",
     )
+    image = models.ImageField(
+        upload_to="inventaire/images",
+        blank=True,
+        null=True,
+        verbose_name="Image",
+        help_text="Image associee a l'enregistrement.",
+    )
+    custom_desc = models.TextField(
+        blank=True,
+        null=True,
+        verbose_name="Description personnalisée",
+        help_text="Description personnalisée associee a l'enregistrement.",
+    )
 
     class Meta:
         verbose_name = "Enregistrement d'inventaire"
