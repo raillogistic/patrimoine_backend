@@ -2,7 +2,7 @@
 import graphene
 from django.db import transaction
 
-from inventory.graphqls.serializers import EnregistrementInventaireCustomSerializer
+from libs.graphql.schema.serializers import EnregistrementInventaireSerializer
 
 
 class InventoryCustomQueries(graphene.ObjectType):
@@ -74,7 +74,7 @@ class SyncInventoryScans(graphene.Mutation):
 
             cleaned = {key: value for key, value in payload.items() if value is not None}
 
-            serializer = EnregistrementInventaireCustomSerializer(data=cleaned)
+            serializer = EnregistrementInventaireSerializer(data=cleaned)
             if serializer.is_valid():
                 with transaction.atomic():
                     instance = serializer.save()
