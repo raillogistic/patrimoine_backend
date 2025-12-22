@@ -69,7 +69,7 @@ class GQLView(GraphQLView):
 
 urlpatterns = [
     # path("gql", csrf_exempt(PrivateGraphQLUpladView.as_view(batch=False))),
-    graphql_url("gql", throw_error=True),
+    graphql_url("gql", throw_error=False),
     graphql_url("graphiql", throw_error=False, isopen=True, graphiql=True),
     # openGraphqlUrl("graphiql", throw_error=True),
     # closedGraphqlUrl("gql", throw_error=False),
