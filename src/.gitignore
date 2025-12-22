@@ -79,7 +79,7 @@ docs/_build/
 
 # PyBuilder
 target/
-
+media/inventaire/
 
 ### Django ###
 *.log
