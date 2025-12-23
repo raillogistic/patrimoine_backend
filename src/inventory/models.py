@@ -312,6 +312,21 @@ class EnregistrementInventaire(ModeleHorodatage):
         verbose_name="Description personnalisée",
         help_text="Description personnalisée associee a l'enregistrement.",
     )
+    # localisation GPS
+    latitude = models.CharField(
+        max_length=30,
+        blank=True,
+        null=True,
+        verbose_name="Latitude",
+        help_text="Latitude associee a l'enregistrement.",
+    )
+    longitude = models.CharField(
+        max_length=30,
+        blank=True,
+        null=True,
+        verbose_name="Longitude",
+        help_text="Longitude associee a l'enregistrement.",
+    )
 
     class Meta:
         verbose_name = "Enregistrement d'inventaire"
