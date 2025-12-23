@@ -28,6 +28,8 @@ class InventoryScanSyncInput(graphene.InputObjectType):
     code_article = graphene.String(required=True)
     capture_le = graphene.DateTime(required=False)
     source_scan = graphene.String(required=False)
+    latitude = graphene.String(required=False)
+    longitude = graphene.String(required=False)
     donnees_capture = graphene.JSONString(required=False)
     observation = graphene.String(required=False)
     serial_number = graphene.String(required=False)

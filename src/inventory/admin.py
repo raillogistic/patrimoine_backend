@@ -112,6 +112,8 @@ class EnregistrementInventaireAdmin(TimestampedAdmin):
         "image",
         "image2",
         "image3",
+        "latitude",
+        "longitude",
     )
     list_filter = ("groupe__nom", "lieu")
     search_fields = (
@@ -143,6 +145,8 @@ class EnregistrementInventaireAdmin(TimestampedAdmin):
                     "serial_number",
                     "image",
                     "custom_desc",
+                    "latitude",
+                    "longitude",
                 ),
             },
         ),
