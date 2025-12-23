@@ -2,6 +2,7 @@ import functools
 import logging
 import traceback
 from datetime import datetime
+from decimal import Decimal
 from collections import OrderedDict
 from copy import deepcopy
 
@@ -200,12 +201,14 @@ class Resource(metaclass=DeclarativeMetaclass):
     representations and handle importing and exporting data.
     """
 
-    def __init__(self):
+    def __init__(self, **kwargs):
         # The fields class attribute is the *class-wide* definition of
         # fields. Because a particular *instance* of the class might want to
         # alter self.fields, we create self.fields here by copying cls.fields.
         # Instances should always modify self.fields; they should not modify
         # cls.fields.
+        # Accept and ignore extra kwargs passed by django-import-export.
+        del kwargs
 
         self.fields = deepcopy(self.fields)
 
@@ -1087,9 +1090,18 @@ class SafeDateTimeWidget(widgets.DateTimeWidget):
         return widgets.format_datetime(value, self.formats[0])
 
 
+class SafeDecimalWidget(widgets.DecimalWidget):
+    def render(self, value, obj=None):
+        # Avoid Django number_format crashing on NaN/Infinity decimals.
+        if isinstance(value, Decimal) and not value.is_finite():
+            return "" if self.coerce_to_string else value
+        return super().render(value, obj=obj)
+
+
 class SafeModelResource(ModelResource):
     WIDGETS_MAP = {
         **ModelResource.WIDGETS_MAP,
+        "DecimalField": SafeDecimalWidget,
         "DateTimeField": SafeDateTimeWidget,
     }
 
