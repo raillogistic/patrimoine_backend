@@ -8,7 +8,7 @@ import graphene
 from django.core.files.base import ContentFile
 from django.db import transaction
 
-from libs.graphql.schema.serializers import EnregistrementInventaireSerializer, ScannedArticleSerializer
+from libs.graphql.schema.serializers import EnregistrementInventaireSerializer
 
 
 class InventoryCustomQueries(graphene.ObjectType):
@@ -235,135 +235,7 @@ class SyncInventoryScans(graphene.Mutation):
         )
 
 
-############################
-# NEW: ScannedArticle sync (uses Position instead of Location)
-############################
-
-
-class ScannedArticleSyncInput(graphene.InputObjectType):
-    """Input payload for syncing ScannedArticle records from mobile app.
-    
-    Uses the new Position model instead of Location.
-    Simplified fields compared to EnregistrementInventaire.
-    """
-
-    local_id = graphene.String(required=True, description="Local ID from mobile app for tracking sync status")
-    campagne = graphene.ID(required=True, description="Campaign ID")
-    groupe = graphene.ID(required=True, description="Counting group ID")
-    position = graphene.ID(required=True, description="Position ID (replaces 'lieu')")
-    code_article = graphene.String(required=True, description="Scanned article barcode")
-    capture_le = graphene.DateTime(required=False, description="Capture timestamp")
-    source_scan = graphene.String(required=False, description="Scan source: 'integrated scanner', 'RFID', 'manuel'")
-    observation = graphene.String(required=False, description="Optional observation")
-    serial_number = graphene.String(required=False, description="Optional serial number")
-    etat = graphene.String(required=False, description="Material state: 'BIEN', 'MOYENNE', 'HORS_SERVICE'")
-    article = graphene.ID(required=False, description="Article ID if matched in reference")
-
-
-class ScannedArticleSyncResult(graphene.ObjectType):
-    """Result payload for a single ScannedArticle sync."""
-
-    local_id = graphene.String(description="Local ID from mobile app")
-    remote_id = graphene.ID(description="Created record ID on server")
-    ok = graphene.Boolean(description="Whether sync was successful")
-    errors = graphene.List(graphene.String, description="Error messages if sync failed")
-
-
-class SyncScannedArticles(graphene.Mutation):
-    """Sync ScannedArticle records from mobile offline data.
-    
-    This mutation handles the new simplified inventory model that uses
-    Position instead of Location. No image or GPS fields.
-    """
-
-    class Input:
-        input = graphene.List(ScannedArticleSyncInput, required=True)
-
-    ok = graphene.Boolean(description="True if all items synced successfully")
-    message = graphene.String(description="Summary message")
-    results = graphene.List(ScannedArticleSyncResult, description="Individual sync results")
-
-    @staticmethod
-    def _normalize_errors(errors):
-        """Convert serializer errors to list of strings."""
-        messages = []
-        for field, details in errors.items():
-            if isinstance(details, (list, tuple)):
-                for detail in details:
-                    messages.append(f"{field}: {detail}")
-            else:
-                messages.append(f"{field}: {details}")
-        return messages
-
-    @staticmethod
-    def mutate(root, info, input):
-        if not input:
-            return SyncScannedArticles(
-                ok=True, message="Aucun article scanne a synchroniser.", results=[]
-            )
-
-        results = []
-        success_count = 0
-
-        for item in input:
-            local_id = None
-            try:
-                payload = dict(item)
-                local_id = payload.pop("local_id", None)
-
-                # Clean payload: remove None values
-                cleaned = {
-                    key: value for key, value in payload.items() if value is not None
-                }
-
-                serializer = ScannedArticleSerializer(data=cleaned)
-                if serializer.is_valid():
-                    with transaction.atomic():
-                        instance = serializer.save()
-                    results.append(
-                        ScannedArticleSyncResult(
-                            local_id=local_id,
-                            remote_id=instance.pk,
-                            ok=True,
-                            errors=[],
-                        )
-                    )
-                    success_count += 1
-                    continue
-
-                results.append(
-                    ScannedArticleSyncResult(
-                        local_id=local_id,
-                        remote_id=None,
-                        ok=False,
-                        errors=SyncScannedArticles._normalize_errors(serializer.errors),
-                    )
-                )
-            except Exception as exc:
-                results.append(
-                    ScannedArticleSyncResult(
-                        local_id=local_id,
-                        remote_id=None,
-                        ok=False,
-                        errors=[f"{type(exc).__name__}: {exc}"],
-                    )
-                )
-
-        message = (
-            f"{success_count}/{len(input)} articles scannes synchronises."
-            if len(input) > 0
-            else "Aucun article scanne a synchroniser."
-        )
-        return SyncScannedArticles(
-            ok=success_count == len(input),
-            message=message,
-            results=results,
-        )
-
-
 class InventoryCustomMutations(graphene.ObjectType):
     # Old mutation (kept for backward compatibility)
     sync_inventory_scans = SyncInventoryScans.Field()
-    # New mutation for ScannedArticle
-    sync_scanned_articles = SyncScannedArticles.Field()
 
