@@ -1,4 +1,8 @@
 
+
+
+
+
 from libs.graphql.serializers import CustomSerializer
 from immo.models import Article
 
@@ -32,4 +36,32 @@ class EnregistrementInventaireCustomSerializer(CustomSerializer):
                 data["article"] = Article.objects.filter(code__iexact=normalized).first()
 
         return data
+        
+
+
+
+#######  ArticleInventaire  #########
+
+class ArticleInventaireCustomSerializer(CustomSerializer):
+    pass
+        
+
+
+
+
+
+#######  PositionType  #########
+
+class PositionTypeCustomSerializer(CustomSerializer):
+    pass
+
+#######  Position  #########
+
+class PositionCustomSerializer(CustomSerializer):
+    pass
+
+#######  ScannedArticle  #########
+
+class ScannedArticleCustomSerializer(CustomSerializer):
+    pass
         

@@ -1,7 +1,14 @@
 from django.contrib import admin
 from libs.utils.import_export_admin import SafeImportExportModelAdmin
 
-from .models import CampagneInventaire, EnregistrementInventaire, GroupeComptage
+from .models import (
+    CampagneInventaire,
+    EnregistrementInventaire,
+    GroupeComptage,
+    Position,
+    PositionType,
+    ScannedArticle,
+)
 
 
 class TimestampedAdmin(SafeImportExportModelAdmin):
@@ -169,3 +176,123 @@ class EnregistrementInventaireAdmin(TimestampedAdmin):
             },
         ),
     )
+
+
+@admin.register(PositionType)
+class PositionTypeAdmin(TimestampedAdmin):
+    list_display = ("name", "slug", "description", "cree_le", "modifie_le")
+    list_filter = ("cree_le",)
+    search_fields = ("name", "slug", "description")
+    prepopulated_fields = {"slug": ("name",)}
+    ordering = ("name",)
+    fieldsets = (
+        (
+            "Informations",
+            {
+                "fields": ("name", "slug", "description"),
+            },
+        ),
+        (
+            "Suivi",
+            {
+                "fields": ("cree_le", "modifie_le"),
+            },
+        ),
+    )
+
+
+@admin.register(Position)
+class PositionAdmin(TimestampedAdmin):
+    list_display = (
+        "name",
+        "full_path",
+        "barcode",
+        "parent",
+        "location_type",
+        "cree_le",
+        "modifie_le",
+    )
+    list_filter = ("location_type", "parent", "cree_le")
+    search_fields = ("name", "barcode", "description", "parent__name")
+    raw_id_fields = ("parent",)
+    readonly_fields = ("cree_le", "modifie_le", "full_path")
+    ordering = ("name",)
+    list_select_related = ("parent", "location_type")
+    fieldsets = (
+        (
+            "Informations",
+            {
+                "fields": ("name", "barcode", "description", "parent", "location_type"),
+            },
+        ),
+        (
+            "Suivi",
+            {
+                "fields": ("cree_le", "modifie_le"),
+            },
+        ),
+    )
+
+
+@admin.register(ScannedArticle)
+class ScannedArticleAdmin(TimestampedAdmin):
+    list_display = (
+        "code_article",
+        "campagne",
+        "groupe",
+        "position",
+        "article",
+        "etat",
+        "serial_number",
+        "source_scan",
+        "capture_le",
+    )
+    list_filter = ("campagne", "groupe", "position", "etat", "capture_le")
+    search_fields = (
+        "code_article",
+        "serial_number",
+        "observation",
+        "article__code",
+        "position__name",
+        "position__barcode",
+        "campagne__code_campagne",
+        "campagne__nom",
+        "groupe__nom",
+    )
+    raw_id_fields = ("campagne", "groupe", "position", "article")
+    ordering = ("-capture_le",)
+    date_hierarchy = "capture_le"
+    list_select_related = ("campagne", "groupe", "position", "article")
+    fieldsets = (
+        (
+            "Reference",
+            {
+                "fields": (
+                    "campagne",
+                    "groupe",
+                    "position",
+                    "article",
+                    "code_article",
+                ),
+            },
+        ),
+        (
+            "Details",
+            {
+                "fields": ("etat", "serial_number", "observation"),
+            },
+        ),
+        (
+            "Capture",
+            {
+                "fields": ("capture_le", "source_scan"),
+            },
+        ),
+        (
+            "Suivi",
+            {
+                "fields": ("cree_le", "modifie_le"),
+            },
+        ),
+    )
+

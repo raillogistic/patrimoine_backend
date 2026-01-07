@@ -1,5 +1,9 @@
 
 
+
+
+
+
 from django.db.models import Q
 from inventory import models
 from django_filters import FilterSet,CharFilter,BooleanFilter
@@ -31,5 +35,45 @@ class GroupeComptageCustomFilters(FilterSet):
 enregistrementinventaire_quick = {}
 enregistrementinventaire_filters = {}
 class EnregistrementInventaireCustomFilters(FilterSet):
+    pass
+        
+
+
+
+
+#######  ArticleInventaire  #########
+
+articleinventaire_quick = {}
+articleinventaire_filters = {}
+class ArticleInventaireCustomFilters(FilterSet):
+    pass
+        
+
+
+
+
+
+
+#######  PositionType  #########
+
+positiontype_quick = {}
+positiontype_filters = {}
+class PositionTypeCustomFilters(FilterSet):
+    pass
+
+
+#######  Position  #########
+
+position_quick = {}
+position_filters = {}
+class PositionCustomFilters(FilterSet):
+    pass
+
+
+#######  ScannedArticle  #########
+
+scannedarticle_quick = {}
+scannedarticle_filters = {}
+class ScannedArticleCustomFilters(FilterSet):
     pass
         

@@ -8,8 +8,8 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile
-    command: gunicorn -k uvicorn.workers.UvicornWorker root.asgi:application --bind 0.0.0.0:7777 --timeout  600
- #
+    command: gunicorn -k uvicorn.workers.UvicornWorker root.asgi:application --bind 0.0.0.0:7777 --timeout  300000
+    #
     # entrypoint: ./entrypoint.sh
     volumes:
       - static_files:/home/app/staticfiles
@@ -18,7 +18,7 @@ services:
       - 7777
     env_file:
       - ./.env.prod
-    
+
   inv_nginx:
     container_name: inv_nginx
     image: nginx-prod
@@ -29,10 +29,10 @@ services:
       - media_volume:/home/app/v2/media
       # - ./nginx:/etc/nginx/conf.d
     ports:
-      - 7777:80
+      - 8001:80
     depends_on:
       - inv_backend
-  
+
 volumes:
   static_files:
   media_volume:

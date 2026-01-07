@@ -1,4 +1,8 @@
 
+
+
+
+
 import graphene
 
 
@@ -21,5 +25,33 @@ class GroupeComptageCustomType(object):
 #######  EnregistrementInventaire  #########
 
 class EnregistrementInventaireCustomType(object):
+    pass
+        
+
+
+
+#######  ArticleInventaire  #########
+
+class ArticleInventaireCustomType(object):
+    pass
+        
+
+
+
+
+
+#######  PositionType  #########
+
+class PositionTypeCustomType(object):
+    pass
+
+#######  Position  #########
+
+class PositionCustomType(object):
+    pass
+
+#######  ScannedArticle  #########
+
+class ScannedArticleCustomType(object):
     pass
         

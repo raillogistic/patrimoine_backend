@@ -335,3 +335,177 @@ class EnregistrementInventaire(ModeleHorodatage):
 
     def __str__(self) -> str:
         return f"{self.code_article} @ {self.lieu_id}"
+
+
+# -- Types d'emplacement ----------------------------------------------------
+class PositionType(ModeleHorodatage):
+    """Type d'emplacement pour categoriser les positions."""
+
+    name = models.CharField(
+        max_length=100,
+        unique=True,
+        verbose_name="Nom du type",
+    )
+    slug = models.SlugField(
+        max_length=100,
+        unique=True,
+        verbose_name="Slug",
+    )
+    description = models.TextField(
+        blank=True,
+        null=True,
+        verbose_name="Description",
+    )
+
+    class Meta:
+        verbose_name = "Type d'emplacement"
+        verbose_name_plural = "Types d'emplacement"
+        ordering = ("name",)
+
+    def __str__(self) -> str:
+        return self.name
+
+
+# -- Emplacements -----------------------------------------------------------
+class Position(ModeleHorodatage):
+    """Emplacement hierarchique pour le comptage d'inventaire."""
+
+    name = models.CharField(
+        max_length=150,
+        verbose_name="Nom",
+    )
+    description = models.TextField(
+        blank=True,
+        null=True,
+        verbose_name="Description",
+    )
+    parent = models.ForeignKey(
+        "self",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        related_name="children",
+        verbose_name="Parent",
+    )
+    location_type = models.ForeignKey(
+        PositionType,
+        on_delete=models.PROTECT,
+        related_name="locations",
+        verbose_name="Type",
+        null=True,
+        blank=True,
+    )
+    barcode = models.CharField(
+        max_length=100,
+        unique=True,
+        verbose_name="Code-barres",
+        help_text="Code-barres unique pour identifier l'emplacement.",
+    )
+
+    class Meta:
+        verbose_name = "Emplacement"
+        verbose_name_plural = "Emplacements"
+        unique_together = ("parent", "name")
+        ordering = ("name",)
+
+    def __str__(self) -> str:
+        return self.name
+
+    @property
+    def full_path(self) -> str:
+        """Retourne le chemin hierarchique complet depuis la racine.
+        
+        Exemple: "Rouiba - ADM 01 - Etage 01"
+        """
+        path_parts = [self.name]
+        current = self.parent
+        while current is not None:
+            path_parts.insert(0, current.name)
+            current = current.parent
+        return " - ".join(path_parts)
+
+
+# -- Articles scannes -------------------------------------------------------
+class ScannedArticle(ModeleHorodatage):
+    """Enregistre un article scanne lors d'une campagne d'inventaire."""
+
+    class EtatMateriel(models.TextChoices):
+        BIEN = "BIEN", "Bien"
+        MOYENNE = "MOYENNE", "Moyenne"
+        HORS_SERVICE = "HORS_SERVICE", "Hors service"
+
+    campagne = models.ForeignKey(
+        CampagneInventaire,
+        on_delete=models.PROTECT,
+        related_name="articles_scannes",
+        verbose_name="Campagne",
+        help_text="Campagne rattachee a cet enregistrement.",
+    )
+    groupe = models.ForeignKey(
+        GroupeComptage,
+        on_delete=models.PROTECT,
+        related_name="articles_scannes",
+        verbose_name="Groupe de comptage",
+        help_text="Groupe ayant effectue le scan.",
+    )
+    position = models.ForeignKey(
+        Position,
+        on_delete=models.PROTECT,
+        related_name="articles_scannes",
+        verbose_name="Emplacement",
+        help_text="Emplacement ou l'article a ete scanne.",
+    )
+    article = models.ForeignKey(
+        "immo.Article",
+        on_delete=models.PROTECT,
+        blank=True,
+        null=True,
+        related_name="scans_inventaire",
+        verbose_name="Article",
+        help_text="Article reference si le code correspond au referentiel.",
+    )
+    code_article = models.CharField(
+        max_length=300,
+        verbose_name="Code article",
+        help_text="Code unique scanne sur l'article.",
+    )
+    etat = models.CharField(
+        max_length=20,
+        choices=EtatMateriel.choices,
+        null=True,
+        blank=True,
+        verbose_name="Etat du materiel",
+        help_text="Etat du materiel lors de l'enregistrement.",
+    )
+    serial_number = models.CharField(
+        max_length=100,
+        blank=True,
+        null=True,
+        verbose_name="Numero de serie",
+        help_text="Numero de serie associe a l'article scanne.",
+    )
+    observation = models.TextField(
+        blank=True,
+        null=True,
+        verbose_name="Observation",
+        help_text="Observation complementaire associee a l'enregistrement.",
+    )
+    source_scan = models.CharField(
+        max_length=100,
+        blank=True,
+        verbose_name="Source du scan",
+        help_text="Origine du scan (integrated scanner, RFID, manuel...).",
+    )
+    capture_le = models.DateTimeField(
+        default=timezone.now,
+        verbose_name="Capture le",
+        help_text="Date et heure de capture du scan.",
+    )
+
+    class Meta:
+        verbose_name = "Article scanne"
+        verbose_name_plural = "Articles scannes"
+        ordering = ("-capture_le",)
+
+    def __str__(self) -> str:
+        return f"{self.code_article} @ {self.position_id}"
