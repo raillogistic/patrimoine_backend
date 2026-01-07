@@ -42,7 +42,7 @@ DEBUG = True
 ALLOWED_HOSTS = ["*"]
 CSRF_TRUSTED_ORIGINS = [
     "http://*",
-    "http://192.168.0.16:8001",
+    "http://192.168.0.17:8001",
     "http://41.111.138.26:8001",
     "http://192.168.0.17:8001",
 ]
