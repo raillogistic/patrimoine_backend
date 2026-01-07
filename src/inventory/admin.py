@@ -180,7 +180,7 @@ class EnregistrementInventaireAdmin(TimestampedAdmin):
 
 @admin.register(PositionType)
 class PositionTypeAdmin(TimestampedAdmin):
-    list_display = ("name", "slug", "description", "cree_le", "modifie_le")
+    list_display = ("name", "slug", "desc", "cree_le", "modifie_le")
     list_filter = ("cree_le",)
     search_fields = ("name", "slug", "description")
     prepopulated_fields = {"slug": ("name",)}
@@ -295,4 +295,3 @@ class ScannedArticleAdmin(TimestampedAdmin):
             },
         ),
     )
-

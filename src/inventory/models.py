@@ -351,10 +351,11 @@ class PositionType(ModeleHorodatage):
         unique=True,
         verbose_name="Slug",
     )
-    description = models.TextField(
+    desc = models.TextField(
         blank=True,
         null=True,
         verbose_name="Description",
+        db_column="description",
     )
 
     class Meta:
@@ -374,10 +375,11 @@ class Position(ModeleHorodatage):
         max_length=150,
         verbose_name="Nom",
     )
-    description = models.TextField(
+    desc = models.TextField(
         blank=True,
         null=True,
         verbose_name="Description",
+        db_column="description",
     )
     parent = models.ForeignKey(
         "self",
@@ -414,7 +416,7 @@ class Position(ModeleHorodatage):
     @property
     def full_path(self) -> str:
         """Retourne le chemin hierarchique complet depuis la racine.
-        
+
         Exemple: "Rouiba - ADM 01 - Etage 01"
         """
         path_parts = [self.name]
