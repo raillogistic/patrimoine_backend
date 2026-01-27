@@ -144,6 +144,12 @@ class GroupeComptage(ModeleHorodatage):
         ),
     )
 
+    @property
+    def designation(self):
+        return f"{self.nom} "
+
+    designation.fget.short_description = "Designation"
+
     class Meta:
         verbose_name = "Groupe de comptage"
         verbose_name_plural = "Groupes de comptage"

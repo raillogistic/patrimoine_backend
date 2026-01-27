@@ -255,6 +255,10 @@ class Article(models.Model):
             return affectation.location
         return None
 
+    @property
+    def designation(self):
+        return f"{self.code} {self.desc}"
+
     class Meta:
         managed = True
         db_table = "Article"
