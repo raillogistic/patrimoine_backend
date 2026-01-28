@@ -7,6 +7,8 @@
 
 
 
+
+
 class CampagneInventaireCustomMutation:
     nested = {
         #'groupes' : 'GroupeComptage',
@@ -80,6 +82,29 @@ class ScannedArticleCustomMutation:
         #'campagne' : 'CampagneInventaire',
 #'groupe' : 'GroupeComptage',
 #'position' : 'Position',
+#'article' : 'Article',
+
+    }
+
+
+
+
+
+
+class RapprochementInventaireCustomMutation:
+    nested = {
+        #'campagne' : 'CampagneInventaire',
+
+    }
+
+
+
+
+
+
+class RapprochementInventaireDetailCustomMutation:
+    nested = {
+        #'rapprochement' : 'RapprochementInventaire',
 #'article' : 'Article',
 
     }

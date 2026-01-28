@@ -3,6 +3,10 @@
 
 
 
+
+
+
+
 from libs.graphql.serializers import CustomSerializer
 from immo.models import Article
 
@@ -63,5 +67,21 @@ class PositionCustomSerializer(CustomSerializer):
 #######  ScannedArticle  #########
 
 class ScannedArticleCustomSerializer(CustomSerializer):
+    pass
+        
+
+
+
+#######  RapprochementInventaire  #########
+
+class RapprochementInventaireCustomSerializer(CustomSerializer):
+    pass
+        
+
+
+
+#######  RapprochementInventaireDetail  #########
+
+class RapprochementInventaireDetailCustomSerializer(CustomSerializer):
     pass
         

@@ -1,7 +1,6 @@
 import graphene
 from django.core.paginator import Paginator
 from graphene_django.filter import DjangoFilterConnectionField
-
 from libs.graphql.connection import OrderedDjangoFilterConnectionField
 from libs.graphql.filters import from_global_filter_for_relay
 from libs.graphql.types import CustomNode
@@ -67,14 +66,13 @@ def list_resolver(model, filterclass, resolve_queryset=None):
             qs = filterset.qs
 
         res = qs.order_by(*ordering.split(",")) if ordering else qs
-        limit = 0 if kwargs.pop("limit", None) == 0 else kwargs.pop("limit", 100)
+        limit = kwargs.pop("limit", 100)
         add = (
             model.objects.filter(pk__in=kwargs.get("include", []))
             if kwargs.get("include", []) is not None
             and len(kwargs.get("include", [])) > 0
             else []
         )
-
         if limit:
             return [*add, *res[:limit]]
         if limit == 0:

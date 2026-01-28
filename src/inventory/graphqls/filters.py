@@ -4,6 +4,10 @@
 
 
 
+
+
+
+
 from django.db.models import Q
 from inventory import models
 from django_filters import FilterSet,CharFilter,BooleanFilter
@@ -75,5 +79,27 @@ class PositionCustomFilters(FilterSet):
 scannedarticle_quick = {}
 scannedarticle_filters = {}
 class ScannedArticleCustomFilters(FilterSet):
+    pass
+        
+
+
+
+
+#######  RapprochementInventaire  #########
+
+rapprochementinventaire_quick = {}
+rapprochementinventaire_filters = {}
+class RapprochementInventaireCustomFilters(FilterSet):
+    pass
+        
+
+
+
+
+#######  RapprochementInventaireDetail  #########
+
+rapprochementinventairedetail_quick = {}
+rapprochementinventairedetail_filters = {}
+class RapprochementInventaireDetailCustomFilters(FilterSet):
     pass
         

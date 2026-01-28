@@ -3,6 +3,10 @@
 
 
 
+
+
+
+
 import graphene
 
 
@@ -53,5 +57,21 @@ class PositionCustomType(object):
 #######  ScannedArticle  #########
 
 class ScannedArticleCustomType(object):
+    pass
+        
+
+
+
+#######  RapprochementInventaire  #########
+
+class RapprochementInventaireCustomType(object):
+    pass
+        
+
+
+
+#######  RapprochementInventaireDetail  #########
+
+class RapprochementInventaireDetailCustomType(object):
     pass
         

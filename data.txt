@@ -1,0 +1,2480 @@
+{
+  "data": {
+    "enregistrementinventaires": [
+      {
+        "observation": null,
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G1-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*17220244* INSTALATION RAYONAGE METALIQUE GMR Rouiba"
+        },
+        "code_article": "*17220244*",
+        "capture_le": "2026-01-26T11:08:39.074000+00:00",
+        "source_scan": "manual",
+        "commentaire": "",
+        "cree_le": "2026-01-26T13:13:54.902795+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7303166",
+        "longitude": "3.294187"
+      },
+      {
+        "observation": null,
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G1-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*17220243* ISTALLATION ENSEMBLE DE REYONAGE MI-LOURD"
+        },
+        "code_article": "*17220243*",
+        "capture_le": "2026-01-26T11:08:06.248000+00:00",
+        "source_scan": "manual",
+        "commentaire": "",
+        "cree_le": "2026-01-26T13:13:55.229109+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7303166",
+        "longitude": "3.294187"
+      },
+      {
+        "observation": null,
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G1-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*17220235* INSTALLATION D'UN CABLE A FIBRE OPTIQUE"
+        },
+        "code_article": "*17220235*",
+        "capture_le": "2026-01-26T11:06:48.369000+00:00",
+        "source_scan": "manual",
+        "commentaire": "",
+        "cree_le": "2026-01-26T13:13:55.717527+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7303166",
+        "longitude": "3.294187"
+      },
+      {
+        "observation": null,
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G1-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*15110186* PC PORTABLE Dell inspiron 3452/ i5"
+        },
+        "code_article": "*15110186*",
+        "capture_le": "2026-01-26T09:09:35.725000+00:00",
+        "source_scan": "manual",
+        "commentaire": "",
+        "cree_le": "2026-01-26T13:13:56.174119+00:00",
+        "etat": "HORS_SERVICE",
+        "latitude": "36.7298469",
+        "longitude": "3.294027"
+      },
+      {
+        "observation": null,
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G1-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*15110185* PC PORTABLE Dell inspiron 3542 /i5"
+        },
+        "code_article": "*15110185*",
+        "capture_le": "2026-01-26T09:09:05.726000+00:00",
+        "source_scan": "manual",
+        "commentaire": "",
+        "cree_le": "2026-01-26T13:13:56.557729+00:00",
+        "etat": "HORS_SERVICE",
+        "latitude": "36.7298469",
+        "longitude": "3.294027"
+      },
+      {
+        "observation": null,
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G1-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*15110188* PC PORTABLE Dell inspiron 3542/ i5 SN° V6HX4A01"
+        },
+        "code_article": "*15110188*",
+        "capture_le": "2026-01-26T09:08:29.813000+00:00",
+        "source_scan": "manual",
+        "commentaire": "",
+        "cree_le": "2026-01-26T13:13:56.991737+00:00",
+        "etat": "HORS_SERVICE",
+        "latitude": "36.7298469",
+        "longitude": "3.294027"
+      },
+      {
+        "observation": null,
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G1-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*15110144* PC DE BUREAU HP 500 B"
+        },
+        "code_article": "*15110144*",
+        "capture_le": "2026-01-26T09:08:02.961000+00:00",
+        "source_scan": "manual",
+        "commentaire": "",
+        "cree_le": "2026-01-26T13:13:57.368647+00:00",
+        "etat": "HORS_SERVICE",
+        "latitude": "36.7298469",
+        "longitude": "3.294027"
+      },
+      {
+        "observation": null,
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G1-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*15110155* PC DE BUREAU LENOVO THINKCENTER P4"
+        },
+        "code_article": "*15110155*",
+        "capture_le": "2026-01-26T09:06:11.003000+00:00",
+        "source_scan": "manual",
+        "commentaire": "",
+        "cree_le": "2026-01-26T13:13:57.808546+00:00",
+        "etat": "HORS_SERVICE",
+        "latitude": "36.7298469",
+        "longitude": "3.294027"
+      },
+      {
+        "observation": null,
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G1-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*15110059* MICRO ORDINATURE P4 3.0 GRH COMPATIBLE"
+        },
+        "code_article": "*15110059*",
+        "capture_le": "2026-01-26T09:05:00.031000+00:00",
+        "source_scan": "manual",
+        "commentaire": "",
+        "cree_le": "2026-01-26T13:13:58.395219+00:00",
+        "etat": "HORS_SERVICE",
+        "latitude": "36.7298469",
+        "longitude": "3.294027"
+      },
+      {
+        "observation": null,
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G1-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*15110150* PC DE BUREAU HP 500 B"
+        },
+        "code_article": "*15110150*",
+        "capture_le": "2026-01-26T09:04:13.228000+00:00",
+        "source_scan": "manual",
+        "commentaire": "",
+        "cree_le": "2026-01-26T13:13:58.825560+00:00",
+        "etat": "HORS_SERVICE",
+        "latitude": "36.7298469",
+        "longitude": "3.294027"
+      },
+      {
+        "observation": null,
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G1-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*15110166* PC DE BUREAU HP PRO 3330"
+        },
+        "code_article": "*15110166*",
+        "capture_le": "2026-01-26T09:03:44.033000+00:00",
+        "source_scan": "manual",
+        "commentaire": "",
+        "cree_le": "2026-01-26T13:13:59.191922+00:00",
+        "etat": "HORS_SERVICE",
+        "latitude": "36.7298469",
+        "longitude": "3.294027"
+      },
+      {
+        "observation": null,
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G1-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*15110065* MICRO ORDINATURE P4 3.0 GRH COMPATIBLE"
+        },
+        "code_article": "*15110065*",
+        "capture_le": "2026-01-26T09:02:57.549000+00:00",
+        "source_scan": "manual",
+        "commentaire": "",
+        "cree_le": "2026-01-26T13:13:59.564584+00:00",
+        "etat": "HORS_SERVICE",
+        "latitude": "36.7298469",
+        "longitude": "3.294027"
+      },
+      {
+        "observation": null,
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G1-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*15530102* PC DE MONTAGE INTEL CORE I3-4150"
+        },
+        "code_article": "*15530102*",
+        "capture_le": "2026-01-26T09:02:31.880000+00:00",
+        "source_scan": "manual",
+        "commentaire": "",
+        "cree_le": "2026-01-26T13:13:59.903854+00:00",
+        "etat": "HORS_SERVICE",
+        "latitude": "36.7298469",
+        "longitude": "3.294027"
+      },
+      {
+        "observation": null,
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G1-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*15110141* PC DE BUREAU HP 500 B"
+        },
+        "code_article": "*15110141*",
+        "capture_le": "2026-01-26T09:02:07.059000+00:00",
+        "source_scan": "manual",
+        "commentaire": "",
+        "cree_le": "2026-01-26T13:14:00.228707+00:00",
+        "etat": "HORS_SERVICE",
+        "latitude": "36.7298469",
+        "longitude": "3.294027"
+      },
+      {
+        "observation": null,
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G1-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*15110064* MICRO ORDINATURE P4 3.0 GRH COMPATIBLE"
+        },
+        "code_article": "*15110064*",
+        "capture_le": "2026-01-26T09:00:39.949000+00:00",
+        "source_scan": "manual",
+        "commentaire": "",
+        "cree_le": "2026-01-26T13:14:00.607824+00:00",
+        "etat": "HORS_SERVICE",
+        "latitude": "36.7298469",
+        "longitude": "3.294027"
+      },
+      {
+        "observation": null,
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G1-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*15110172* PC PORTABLE DELL"
+        },
+        "code_article": "*15110172*",
+        "capture_le": "2026-01-26T08:53:50.050000+00:00",
+        "source_scan": "manual",
+        "commentaire": "",
+        "cree_le": "2026-01-26T13:14:01.004101+00:00",
+        "etat": "HORS_SERVICE",
+        "latitude": "36.7298469",
+        "longitude": "3.294027"
+      },
+      {
+        "observation": null,
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G1-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*15530101* PC DE MONTAGE INTEL CORE I3-4150"
+        },
+        "code_article": "*15530101*",
+        "capture_le": "2026-01-26T08:53:01.111000+00:00",
+        "source_scan": "manual",
+        "commentaire": "",
+        "cree_le": "2026-01-26T13:14:01.336000+00:00",
+        "etat": "HORS_SERVICE",
+        "latitude": "36.7298469",
+        "longitude": "3.294027"
+      },
+      {
+        "observation": null,
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G1-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*15110143* PC DE BUREAU HP 500 B"
+        },
+        "code_article": "*15110143*",
+        "capture_le": "2026-01-26T08:49:42.710000+00:00",
+        "source_scan": "manual",
+        "commentaire": "",
+        "cree_le": "2026-01-26T13:14:01.652666+00:00",
+        "etat": "HORS_SERVICE",
+        "latitude": "36.7298469",
+        "longitude": "3.294027"
+      },
+      {
+        "observation": null,
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G1-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*15530088* MICRO PORTABLE ASUS I3 4GO 1TB WIND10 15,6 X540UA "
+        },
+        "code_article": "*15530088*",
+        "capture_le": "2026-01-26T08:48:31.114000+00:00",
+        "source_scan": "manual",
+        "commentaire": "",
+        "cree_le": "2026-01-26T13:14:01.966442+00:00",
+        "etat": "HORS_SERVICE",
+        "latitude": "36.7298469",
+        "longitude": "3.294027"
+      },
+      {
+        "observation": null,
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G1-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*15110179* Ordinateur de Bureau HP 3500"
+        },
+        "code_article": "*15110179*",
+        "capture_le": "2026-01-26T08:46:18.971000+00:00",
+        "source_scan": "manual",
+        "commentaire": "",
+        "cree_le": "2026-01-26T13:14:02.294263+00:00",
+        "etat": "HORS_SERVICE",
+        "latitude": "36.7298469",
+        "longitude": "3.294027"
+      },
+      {
+        "observation": null,
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G1-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*15530109* PC DE MONTAGE INTEL CORE I3-4150 MRQ CONDOR"
+        },
+        "code_article": "*15530109*",
+        "capture_le": "2026-01-26T08:43:29.722000+00:00",
+        "source_scan": "manual",
+        "commentaire": "",
+        "cree_le": "2026-01-26T13:14:02.679198+00:00",
+        "etat": "HORS_SERVICE",
+        "latitude": "36.7298469",
+        "longitude": "3.294027"
+      },
+      {
+        "observation": null,
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G1-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*15110191* MICRO ORDINATEUR Dell OptiPlex 3040 Mini Tower BTX Processeur Intel i5-6500"
+        },
+        "code_article": "*15110191*",
+        "capture_le": "2026-01-26T08:42:39.893000+00:00",
+        "source_scan": "manual",
+        "commentaire": "",
+        "cree_le": "2026-01-26T13:14:03.024132+00:00",
+        "etat": "HORS_SERVICE",
+        "latitude": "36.7298469",
+        "longitude": "3.294027"
+      },
+      {
+        "observation": null,
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G1-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*15110101* MICRO ORDINATEUR DELL POWER (SERVEUR)"
+        },
+        "code_article": "*15110101*",
+        "capture_le": "2026-01-26T08:38:42.721000+00:00",
+        "source_scan": "manual",
+        "commentaire": "",
+        "cree_le": "2026-01-26T13:14:03.314790+00:00",
+        "etat": "HORS_SERVICE",
+        "latitude": "36.7298469",
+        "longitude": "3.294027"
+      },
+      {
+        "observation": null,
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G1-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*15110100* MICRO ORDINATEUR DELL POWER (SERVEUR)"
+        },
+        "code_article": "*15110100*",
+        "capture_le": "2026-01-26T08:36:01.295000+00:00",
+        "source_scan": "manual",
+        "commentaire": "",
+        "cree_le": "2026-01-26T13:14:03.597791+00:00",
+        "etat": "HORS_SERVICE",
+        "latitude": "36.7298469",
+        "longitude": "3.294027"
+      },
+      {
+        "observation": null,
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G1-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*15530009* PHOTOCOPIER NUMERIQUE CANON IR 2016"
+        },
+        "code_article": "*15530009*",
+        "capture_le": "2026-01-26T08:34:34.250000+00:00",
+        "source_scan": "manual",
+        "commentaire": "",
+        "cree_le": "2026-01-26T13:14:03.917416+00:00",
+        "etat": "HORS_SERVICE",
+        "latitude": "36.7298469",
+        "longitude": "3.294027"
+      },
+      {
+        "observation": "Hacene taibi",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": null,
+        "code_article": "15110196",
+        "capture_le": "2026-01-22T13:28:43.088000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-25T13:48:18.801481+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7298467",
+        "longitude": "3.2940314"
+      },
+      {
+        "observation": "Atelier maintenance",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*13410103* ENS MOBILE HUILE FUT DE 220L 3.1 +ENROULEUR"
+        },
+        "code_article": "*13410103*",
+        "capture_le": "2026-01-22T10:22:50.225000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-25T13:48:32.566036+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7313098",
+        "longitude": "3.2940496"
+      },
+      {
+        "observation": "Atelier maintenance",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*13410101* KIT A L'HUILE MOBILE ( rapport de compression 5:1+pompe pneumatique 1779+pistole pour l'uile 1767 DM"
+        },
+        "code_article": "*13410101*",
+        "capture_le": "2026-01-22T10:22:01.199000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-25T13:48:43.253489+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7313098",
+        "longitude": "3.2940496"
+      },
+      {
+        "observation": "Atelier maintenance",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*13410102* KIT A L'HUILE MOBILE ( rapport de compression 5:1+pompe pneumatique 1779+pistole pour l'uile 1767 DM"
+        },
+        "code_article": "*13410102*",
+        "capture_le": "2026-01-22T10:21:40.322000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-25T13:49:07.729928+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7313098",
+        "longitude": "3.2940496"
+      },
+      {
+        "observation": "Atelier maintenance",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*13410104* ENS MOBILE HUILE FUT DE 220L 3.1 +ENROULEUR"
+        },
+        "code_article": "*13410104*",
+        "capture_le": "2026-01-22T10:21:28.918000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-25T13:49:11.066851+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7313098",
+        "longitude": "3.2940496"
+      },
+      {
+        "observation": "Atelier maintenance",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": null,
+        "code_article": "13410035",
+        "capture_le": "2026-01-22T10:19:38.732000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-25T13:49:14.372659+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7313098",
+        "longitude": "3.2940496"
+      },
+      {
+        "observation": "Atelier maintenance",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*13410084* PONT ELEVATEUR 3.5 TONNES MARQUE EUROLITF"
+        },
+        "code_article": "*13410084*",
+        "capture_le": "2026-01-22T10:12:26.228000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-25T13:49:17.021316+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7313098",
+        "longitude": "3.2940496"
+      },
+      {
+        "observation": "Atelier maintenance",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*13410131* PONT ELEVATEUR 2 COLONNES ELECTRO-HYDRAULIQUE 4000KG MARQUE GALTA"
+        },
+        "code_article": "*13410131*",
+        "capture_le": "2026-01-22T10:12:02.966000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-25T13:49:19.654720+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7313098",
+        "longitude": "3.2940496"
+      },
+      {
+        "observation": "Atelier maintenance",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*13420146* PONT ELEVATEUR GALTA Mo GT-EL40 SN° EL4019009 CAP 4000KG "
+        },
+        "code_article": "*13420146*",
+        "capture_le": "2026-01-22T10:11:28.310000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-25T13:49:32.878015+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7313098",
+        "longitude": "3.2940496"
+      },
+      {
+        "observation": "Atelier maintenance",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*13420147* PONT ELEVATEUR ELECT MAHA Mo: VAS771025A SN° 221239-003/2019-02-19 5500 KG"
+        },
+        "code_article": "*13420147*",
+        "capture_le": "2026-01-22T10:11:03.665000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-25T13:49:37.058022+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7313098",
+        "longitude": "3.2940496"
+      },
+      {
+        "observation": "Atelier maintenance",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*13410147* JEU DE CLES MIXTES A DOUILLES 3/8 12 888ZN"
+        },
+        "code_article": "*13410147*",
+        "capture_le": "2026-01-22T10:08:09.165000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-25T13:49:51.311016+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7313098",
+        "longitude": "3.2940496"
+      },
+      {
+        "observation": null,
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G1-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*15530076* PC DE BUREAU DELL OPTIPLEX 3060MT i5 8G 1TB ECRANT 20\""
+        },
+        "code_article": "*15530076*",
+        "capture_le": "2026-01-22T10:05:26.480000+00:00",
+        "source_scan": "manual",
+        "commentaire": "",
+        "cree_le": "2026-01-26T13:14:04.206960+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7298549",
+        "longitude": "3.2940141"
+      },
+      {
+        "observation": "Atelier maintenance",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*13410159* KIT DE REPARATION FILETRAGE BOUGIE MARQUE BETA 437K/33"
+        },
+        "code_article": "*13410159*",
+        "capture_le": "2026-01-22T09:59:41.585000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-25T13:49:53.889373+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7318945",
+        "longitude": "3.2950635"
+      },
+      {
+        "observation": "Atelier maintenance",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*13410157* EXTRACTEUR REVERSIBLE BOUGIES PRECHAUFFAGE MARQUE BETA 960KC-M8/M9/M10"
+        },
+        "code_article": "*13410157*",
+        "capture_le": "2026-01-22T09:57:35.138000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-25T13:49:56.002648+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7318945",
+        "longitude": "3.2950635"
+      },
+      {
+        "observation": "Atelier maintenance",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*13410158* COMPOSITION D'OUTILS DEMONTAGE BOUGIES MARQUE BETA"
+        },
+        "code_article": "*13410158*",
+        "capture_le": "2026-01-22T09:56:32.566000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-25T13:49:58.528697+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7318945",
+        "longitude": "3.2950635"
+      },
+      {
+        "observation": "Atelier maintenance",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*13410148* JEU DE CLES MIXTES A DOUILLES 1/2 12 900Z"
+        },
+        "code_article": "*13410148*",
+        "capture_le": "2026-01-22T09:55:52.841000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-25T13:50:04.474810+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7318945",
+        "longitude": "3.2950635"
+      },
+      {
+        "observation": "Atelier maintenance",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*13410088* JEU DE TESTEURS DE PETE DE COMPRESSION ET DE PRESSION MARQUE VIGOR"
+        },
+        "code_article": "*13410088*",
+        "capture_le": "2026-01-22T09:51:42.409000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-25T13:50:07.206380+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7318945",
+        "longitude": "3.2950635"
+      },
+      {
+        "observation": "Atelier maintenance",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": null,
+        "code_article": "*17120406*",
+        "capture_le": "2026-01-22T09:42:04.335000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-25T13:50:09.898048+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7318945",
+        "longitude": "3.2950635"
+      },
+      {
+        "observation": "Atelier maintenance",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": null,
+        "code_article": "15860031",
+        "capture_le": "2026-01-22T09:40:35.587000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-25T13:50:13.032942+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7318945",
+        "longitude": "3.2950635"
+      },
+      {
+        "observation": "Atelier maintenance",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": null,
+        "code_article": "13410033",
+        "capture_le": "2026-01-22T09:39:15.619000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-25T13:50:15.457296+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7318945",
+        "longitude": "3.2950635"
+      },
+      {
+        "observation": "Atelier maintenance",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*13420119* CANON A MOUSSE INOX 50 LT MARQUE FLOWY"
+        },
+        "code_article": "*13420119*",
+        "capture_le": "2026-01-22T09:34:20.727000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-25T13:50:18.522395+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7318945",
+        "longitude": "3.2950635"
+      },
+      {
+        "observation": "Atelier maintenance",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*13420104* SERVANTE 07TR 05 TIROIRS PLEINE AVEC SERRURE 261 PIECES TOPTUL"
+        },
+        "code_article": "*13420104*",
+        "capture_le": "2026-01-22T09:34:03.683000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-25T13:50:20.581342+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7318945",
+        "longitude": "3.2950635"
+      },
+      {
+        "observation": "Atelier maintenance",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": null,
+        "code_article": "*17120407*",
+        "capture_le": "2026-01-22T09:33:32.254000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-25T13:50:22.710198+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7318945",
+        "longitude": "3.2950635"
+      },
+      {
+        "observation": "Atelier maintenance",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*13410080* SERVANTE VIDE ROLL 6 TIROIRS ROUGE ROLL.6M3PB FACOM"
+        },
+        "code_article": "*13410080*",
+        "capture_le": "2026-01-22T09:32:28.107000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-25T13:50:25.078477+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7318945",
+        "longitude": "3.2950635"
+      },
+      {
+        "observation": "Atelier maintenance",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*13410064* CHARGEUR DEMARREUR POUR BATTERIE ENGINS ( DYM 620 TELWIN )"
+        },
+        "code_article": "*13410064*",
+        "capture_le": "2026-01-22T09:32:00.302000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-25T13:50:27.394377+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7318945",
+        "longitude": "3.2950635"
+      },
+      {
+        "observation": "Cellule GPS",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*13410037* SERVANTE VIDE ROLL 6 TIROIRS ROUGE ROLL.6XLPB FACOM"
+        },
+        "code_article": "*13410037*",
+        "capture_le": "2026-01-22T09:23:46.036000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-25T13:50:30.545804+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7318945",
+        "longitude": "3.2950635"
+      },
+      {
+        "observation": "Cellule GPS",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*13420095* COMPRESSEUR D'AIR 270L MARQUE  FINI "
+        },
+        "code_article": "*13420095*",
+        "capture_le": "2026-01-22T09:16:22.791000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-25T13:50:32.576414+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7318945",
+        "longitude": "3.2950635"
+      },
+      {
+        "observation": "Cellule GPS",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*13420127* DETARTREUR AUTOMATIQUE LAVRA BOX CLASSIQUE"
+        },
+        "code_article": "*13420127*",
+        "capture_le": "2026-01-22T09:15:46.678000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-25T13:50:34.475962+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7318945",
+        "longitude": "3.2950635"
+      },
+      {
+        "observation": "Cellule GPS",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "25050001 STATION DE RECHARGE ET D'ENTRETIEN DE CLIMASITION R134A TEXA"
+        },
+        "code_article": "25050001",
+        "capture_le": "2026-01-22T09:14:53.502000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-25T13:50:37.060927+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7318945",
+        "longitude": "3.2950635"
+      },
+      {
+        "observation": "Cellule GPS",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": null,
+        "code_article": "*13030186*",
+        "capture_le": "2026-01-22T09:09:47.844000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-25T13:50:39.045590+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7318945",
+        "longitude": "3.2950635"
+      },
+      {
+        "observation": "Cellule GPS",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*15530076* PC DE BUREAU DELL OPTIPLEX 3060MT i5 8G 1TB ECRANT 20\""
+        },
+        "code_article": "*15530076*",
+        "capture_le": "2026-01-22T09:09:28.512000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-25T13:50:41.661550+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7318945",
+        "longitude": "3.2950635"
+      },
+      {
+        "observation": "Atelier maintenance",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*17220324* RAYONNAGE MAGASIN MAINTENANCE"
+        },
+        "code_article": "*17220324*",
+        "capture_le": "2026-01-22T09:07:20.111000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-25T13:50:44.143709+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7318945",
+        "longitude": "3.2950635"
+      },
+      {
+        "observation": "Atelier maintenance",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "E2504019 CHAISE RÉFECTOIRE "
+        },
+        "code_article": "E2504019",
+        "capture_le": "2026-01-22T09:05:53.940000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-25T13:50:46.612612+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7318945",
+        "longitude": "3.2950635"
+      },
+      {
+        "observation": "Atelier maintenance",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "E2510004 FONTAINE FRAICHE MIDEA "
+        },
+        "code_article": "E2510004",
+        "capture_le": "2026-01-22T09:05:31.076000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-25T13:50:48.881265+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7318945",
+        "longitude": "3.2950635"
+      },
+      {
+        "observation": "Atelier maintenance",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "E2504018 CHAISE RÉFECTOIRE "
+        },
+        "code_article": "E2504018",
+        "capture_le": "2026-01-22T09:03:33.569000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-25T13:50:51.816429+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7318945",
+        "longitude": "3.2950635"
+      },
+      {
+        "observation": "Atelier maintenance",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "E2504017 TABLE RÉFECTOIRE "
+        },
+        "code_article": "E2504017",
+        "capture_le": "2026-01-22T09:03:11.541000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-25T13:50:54.164890+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7318945",
+        "longitude": "3.2950635"
+      },
+      {
+        "observation": "Atelier maintenance",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "E2504021 CHAISE RÉFECTOIRE "
+        },
+        "code_article": "E2504021",
+        "capture_le": "2026-01-22T09:02:57.619000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-25T13:50:55.907606+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7318945",
+        "longitude": "3.2950635"
+      },
+      {
+        "observation": "Atelier maintenance",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "E2504023 CHAISE RÉFECTOIRE "
+        },
+        "code_article": "E2504023",
+        "capture_le": "2026-01-22T09:02:46.741000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-25T13:50:57.790292+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7318945",
+        "longitude": "3.2950635"
+      },
+      {
+        "observation": "Atelier maintenance",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "E2510001 MICRO ONDE 20L CONDOR"
+        },
+        "code_article": "E2510001",
+        "capture_le": "2026-01-22T09:02:31.492000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-25T13:50:59.728995+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7318945",
+        "longitude": "3.2950635"
+      },
+      {
+        "observation": "Atelier maintenance",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "E2510003 MACHINE A CAFÉ ROBUSTA SENIES BARISTA"
+        },
+        "code_article": "E2510003",
+        "capture_le": "2026-01-22T09:02:19.272000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-25T13:51:01.752632+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7318945",
+        "longitude": "3.2950635"
+      },
+      {
+        "observation": "Atelier maintenance",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "25020018 REFRIGERATEUR CONDOR INOX 6502P VITA65/V4"
+        },
+        "code_article": "25020018",
+        "capture_le": "2026-01-22T09:01:30.952000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-25T13:51:06.381838+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7318945",
+        "longitude": "3.2950635"
+      },
+      {
+        "observation": "Atelier maintenance",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*15530230* UNITE CENTRAL DELL VOSTRO 3888-N C I5"
+        },
+        "code_article": "*15530230*",
+        "capture_le": "2026-01-22T08:56:24.473000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-25T13:51:09.013410+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7318945",
+        "longitude": "3.2950635"
+      },
+      {
+        "observation": "Atelier maintenance",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": null,
+        "code_article": "*15530185*",
+        "capture_le": "2026-01-22T08:55:40.096000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-25T13:51:11.092024+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7318945",
+        "longitude": "3.2950635"
+      },
+      {
+        "observation": "Atelier maintenance",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*15700053* CLIM CONDOR 12000BTU"
+        },
+        "code_article": "*15700053*",
+        "capture_le": "2026-01-22T08:54:34.623000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-25T13:51:12.734801+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7318945",
+        "longitude": "3.2950635"
+      },
+      {
+        "observation": "Atelier maintenance",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*15530124* MICRO DELL Optiplex 3080 I5 4G 1TB GRDVD ECRANT 22 "
+        },
+        "code_article": "*15530124*",
+        "capture_le": "2026-01-22T08:53:00.992000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-25T13:51:14.963120+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7318945",
+        "longitude": "3.2950635"
+      },
+      {
+        "observation": "Station gasoil",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": null,
+        "code_article": "15830095",
+        "capture_le": "2026-01-21T14:07:16.264000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-25T13:51:17.936558+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7299932",
+        "longitude": "3.2941003"
+      },
+      {
+        "observation": "Station lavage",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*17220394* POMPE DE LAVAGE 250 BAR"
+        },
+        "code_article": "*17220394*",
+        "capture_le": "2026-01-21T13:57:15.039000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-25T13:51:19.746556+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7299932",
+        "longitude": "3.2941003"
+      },
+      {
+        "observation": "Station lavage",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*13420120* ENROULEUR STANDARD OUVERT AVEC ENTREE/SORTIE 3/8 EAU/GRAISSE "
+        },
+        "code_article": "*13420120*",
+        "capture_le": "2026-01-21T13:54:57.823000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-25T13:51:28.234449+00:00",
+        "etat": "HORS_SERVICE",
+        "latitude": "36.7299932",
+        "longitude": "3.2941003"
+      },
+      {
+        "observation": "Station lavage",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*17220396* POMPE DE LAVAGE 250 BAR"
+        },
+        "code_article": "*17220396*",
+        "capture_le": "2026-01-21T13:50:41.255000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-25T13:51:31.016010+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7299932",
+        "longitude": "3.2941003"
+      },
+      {
+        "observation": "Station lavage",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*13410067* COMPRESSEUR 100 L BALMA ITALY"
+        },
+        "code_article": "*13410067*",
+        "capture_le": "2026-01-21T13:47:38.837000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-25T13:51:38.360414+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7299932",
+        "longitude": "3.2941003"
+      },
+      {
+        "observation": "Station lavage",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*13420124* ASPIRATEUR EAU ET POUSSIERE A 03 MOTEURS IPC-Italie "
+        },
+        "code_article": "*13420124*",
+        "capture_le": "2026-01-21T13:46:51.846000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-25T13:51:40.293328+00:00",
+        "etat": "HORS_SERVICE",
+        "latitude": "36.7299932",
+        "longitude": "3.2941003"
+      },
+      {
+        "observation": "Station lavage",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*13420121* ENROULEUR STANDARD OUVERT AVEC ENTREE/SORTIE 3/8 EAU/GRAISSE "
+        },
+        "code_article": "*13420121*",
+        "capture_le": "2026-01-21T13:44:09.854000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-25T13:51:42.286972+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7299932",
+        "longitude": "3.2941003"
+      },
+      {
+        "observation": "parc lourd",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": null,
+        "code_article": "15810105",
+        "capture_le": "2026-01-21T13:40:39.476000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-26T09:24:26.460506+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7299932",
+        "longitude": "3.2941003"
+      },
+      {
+        "observation": "parc lourd",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*15110184* PC PORTABLE Dell inspiron 3542/ i5"
+        },
+        "code_article": "*15110184*",
+        "capture_le": "2026-01-21T13:38:27.384000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-26T09:24:36.838970+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7299932",
+        "longitude": "3.2941003"
+      },
+      {
+        "observation": "parc lourd",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*15530162* UNITE CENTRAL DELL VOSTRO 3670"
+        },
+        "code_article": "*15530162*",
+        "capture_le": "2026-01-21T13:30:39.930000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-26T09:24:42.499933+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7299932",
+        "longitude": "3.2941003"
+      },
+      {
+        "observation": "parc lourd",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*15530166* UNITE CENTRAL DELL VOSTRO 3670"
+        },
+        "code_article": "*15530166*",
+        "capture_le": "2026-01-21T13:29:24.280000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-26T09:25:06.632075+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7299932",
+        "longitude": "3.2941003"
+      },
+      {
+        "observation": "parc lourd",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*12110041* CABINE C93/ en panneaux Sandwich dim Ext: Long 9.00 m*Larg 3.00 m h 2.70 m"
+        },
+        "code_article": "*12110041*",
+        "capture_le": "2026-01-21T13:26:59.876000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-27T13:45:41.107804+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7299932",
+        "longitude": "3.2941003"
+      },
+      {
+        "observation": "parc lourd",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*12110041* CABINE C93/ en panneaux Sandwich dim Ext: Long 9.00 m*Larg 3.00 m h 2.70 m"
+        },
+        "code_article": "*12110041*",
+        "capture_le": "2026-01-21T13:26:59.876000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-27T13:45:52.054489+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7299932",
+        "longitude": "3.2941003"
+      },
+      {
+        "observation": "Conteneur communication",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "25050004 CHAPITEAUX 4M/4M"
+        },
+        "code_article": "25050004",
+        "capture_le": "2026-01-21T13:18:16.201000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-27T13:45:55.716200+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7299932",
+        "longitude": "3.2941003"
+      },
+      {
+        "observation": "Conteneur communication",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "25050003 CHAPITEAUX 4M/4M"
+        },
+        "code_article": "25050003",
+        "capture_le": "2026-01-21T13:17:20.679000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-27T13:45:59.495041+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7299932",
+        "longitude": "3.2941003"
+      },
+      {
+        "observation": "Adm3 e2 b11",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*15840162* TABLE DE REUNION 5M50/2M"
+        },
+        "code_article": "*15840162*",
+        "capture_le": "2026-01-20T14:26:34.885000+00:00",
+        "source_scan": "manual",
+        "commentaire": "",
+        "cree_le": "2026-01-27T13:46:01.592428+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7298276",
+        "longitude": "3.2940412"
+      },
+      {
+        "observation": "Adm3 e2 b12",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": null,
+        "code_article": "*13030098*",
+        "capture_le": "2026-01-20T14:21:43.861000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-27T13:46:03.720487+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7298276",
+        "longitude": "3.2940412"
+      },
+      {
+        "observation": "Adm3 e2 b12",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": null,
+        "code_article": "12010063",
+        "capture_le": "2026-01-20T14:16:57.080000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-27T13:46:07.973975+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7298276",
+        "longitude": "3.2940412"
+      },
+      {
+        "observation": "Adm3 e2 b12",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*15170141* IMPRIMANTE COULEUR CANON MF633 CDW"
+        },
+        "code_article": "*15170141*",
+        "capture_le": "2026-01-20T14:16:02.273000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-27T13:46:09.847069+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7298276",
+        "longitude": "3.2940412"
+      },
+      {
+        "observation": "Adm3 e2 b15",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*15530117* MICRO PORTABLE DELL LATITUDE 3510 I3 "
+        },
+        "code_article": "*15530117*",
+        "capture_le": "2026-01-20T14:08:30.043000+00:00",
+        "source_scan": "manual",
+        "commentaire": "",
+        "cree_le": "2026-01-27T13:46:10.905300+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7298276",
+        "longitude": "3.2940412"
+      },
+      {
+        "observation": "Adm3 e2 b15",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*15170074* IMPRIMANTE MULTI FONCTION CANON MF724 CDW COULEUR"
+        },
+        "code_article": "*15170074*",
+        "capture_le": "2026-01-20T14:06:35.101000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-27T13:46:12.533712+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7298276",
+        "longitude": "3.2940412"
+      },
+      {
+        "observation": "Adm3 e2 b10",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "E2504015 CHAISE OPÉRATEUR 076 A"
+        },
+        "code_article": "E2504015",
+        "capture_le": "2026-01-20T14:02:46.997000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-27T13:46:14.843254+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7298276",
+        "longitude": "3.2940412"
+      },
+      {
+        "observation": "Adm3 e2 b10",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "25020011 ORDINATEUR DE BUREAU DELL OPTIPLEX 7010"
+        },
+        "code_article": "25020011",
+        "capture_le": "2026-01-20T13:58:42.772000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-27T13:46:25.192145+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7298276",
+        "longitude": "3.2940412"
+      },
+      {
+        "observation": "Adm3 e2 b10",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*15170119* PC PORTABLE LENOVO IP330/i3-7020"
+        },
+        "code_article": "*15170119*",
+        "capture_le": "2026-01-20T13:56:27.674000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-27T13:46:28.427965+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7298276",
+        "longitude": "3.2940412"
+      },
+      {
+        "observation": "Adm3 e2 b10",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": null,
+        "code_article": "12010048",
+        "capture_le": "2026-01-20T13:54:51.352000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-27T13:46:30.399960+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7298276",
+        "longitude": "3.2940412"
+      },
+      {
+        "observation": "Maintenance",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "25020009 POINTEUSE UFACE800 PLUS MARQUE ZKTECO"
+        },
+        "code_article": "25020009",
+        "capture_le": "2026-01-20T13:49:23.640000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-27T13:46:32.382440+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7298276",
+        "longitude": "3.2940412"
+      },
+      {
+        "observation": null,
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G1-ALGER "
+        },
+        "lieu": {
+          "designation": "ALGER - COMPREND LES APPARTEMENTS ET BUREAUX SITUÉS À ALGER "
+        },
+        "departement": null,
+        "article": {
+          "designation": "E2502011 IMPRIMANTE MULTIFONCTION CANON MF 3010 \n"
+        },
+        "code_article": "E2502011",
+        "capture_le": "2026-01-20T12:47:05.512000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-26T13:14:06.412460+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7298438",
+        "longitude": "3.2940308"
+      },
+      {
+        "observation": "Magasin DAZAL",
+        "serial_number": "Magasin DAZAL",
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "25030004 PONCEUSE A BETON WKG6T-540"
+        },
+        "code_article": "25030004",
+        "capture_le": "2026-01-20T10:50:56.955000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-27T13:46:33.945932+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7297532",
+        "longitude": "3.2940092"
+      },
+      {
+        "observation": "Magasin DAZAL",
+        "serial_number": "Magasin DAZAL",
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*13420093* ASPIRATEUR 3 MOT INOX 80L 3000 X 220V E+P"
+        },
+        "code_article": "*13420093*",
+        "capture_le": "2026-01-20T10:50:31.111000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-27T13:46:37.993821+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7297532",
+        "longitude": "3.2940092"
+      },
+      {
+        "observation": "Magasin DAZAL",
+        "serial_number": null,
+        "campagne": {
+          "designation": null
+        },
+        "groupe": {
+          "designation": "G2-ALGER "
+        },
+        "lieu": {
+          "designation": "ZONE INDUSTRIELLE ROUIBA - ZONE INDUSTRIELLE ROUIBA"
+        },
+        "departement": null,
+        "article": {
+          "designation": "*13410130* POSTE A SOUDER ORIGO ARC 650C A12 OFFSHORE MARQUE ESAB"
+        },
+        "code_article": "*13410130*",
+        "capture_le": "2026-01-20T10:13:33.889000+00:00",
+        "source_scan": "camera",
+        "commentaire": "",
+        "cree_le": "2026-01-27T13:46:40.601895+00:00",
+        "etat": "BIEN",
+        "latitude": "36.7297532",
+        "longitude": "3.2940092"
+      }
+    ]
+  }
+}

@@ -89,6 +89,17 @@ class GroupeComptage(ModeleHorodatage):
 
     class RoleComptage(models.TextChoices):
         COMPTAGE = "COMPTAGE", "Comptage"
+        CONTROLE = "CONTROLE", "Contrôle / Supervision"
+
+    compare_to_group = models.ForeignKey(
+        "self",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="groupes_comparaison",
+        verbose_name="Groupe de comparaison",
+        help_text="Groupe avec lequel comparer les scans.",
+    )
 
     campagne = models.ForeignKey(
         CampagneInventaire,
@@ -198,6 +209,10 @@ class EnregistrementInventaire(ModeleHorodatage):
         bien = "BIEN", "Bien"
         moyenne = "MOYENNE", "Moyenne"
         hors_service = "HORS_SERVICE", "Hors service"
+
+    is_extra = models.BooleanField(
+        default=False, null=True, blank=True, verbose_name="Est extra?"
+    )
 
     observation = models.TextField(null=True, blank=True, verbose_name="Observation")
     serial_number = models.CharField(
@@ -339,6 +354,15 @@ class EnregistrementInventaire(ModeleHorodatage):
         verbose_name_plural = "Enregistrements d'inventaire"
         ordering = ("-capture_le",)
 
+    @classmethod
+    def check_extra(cls, ids: [str]):
+        return
+
+    def chhange_extra(self):
+        self.is_extra = not self.is_extra
+        self.save()
+        return
+
     def __str__(self) -> str:
         return f"{self.code_article} @ {self.lieu_id}"
 
@@ -371,6 +395,97 @@ class PositionType(ModeleHorodatage):
 
     def __str__(self) -> str:
         return self.name
+
+
+from datetime import date
+
+from immo.models import Article
+
+
+class RapprochementInventaire(ModeleHorodatage):
+    """Rapprochement d'inventaire."""
+
+    campagne = models.OneToOneField(
+        CampagneInventaire,
+        on_delete=models.CASCADE,
+        related_name="rapprochement",
+        verbose_name="Campagne",
+        null=True,
+        blank=True,
+    )
+    date = models.DateField(null=True, blank=True, verbose_name="Date")
+    created_at = models.DateTimeField(
+        auto_now_add=True, null=True, blank=True, verbose_name="Date de création"
+    )
+
+    @classmethod
+    def new_rapprochement(cls, test: str = ""):
+        if RapprochementInventaire.objects.filter(id=1).exists():
+            pass
+        else:
+            return RapprochementInventaire.objects.create(date=date.today(), id="1")
+        r = RapprochementInventaire.objects.get(id=1)
+        r.details.all().delete()
+        for a in Article.objects.all():
+            de = RapprochementInventaireDetail.objects.create(
+                rapprochement=r, article=a
+            )
+            if EnregistrementInventaire.objects.filter(article=a).exists:
+                de.quantite = (
+                    EnregistrementInventaire.objects.filter(article=a).first().quantite
+                )
+                de.save()
+
+        return r
+
+    # def update(self):
+    #     EnregistrementInventaire
+
+
+class RapprochementInventaireDetail(ModeleHorodatage):
+    """Detail du rapprochement d'inventaire."""
+
+    class StatutRapprochement(models.TextChoices):
+        MATCH = "MATCH", "Correspondance"
+        MANQUANT = "MANQUANT", "Manquant (Ecart Négatif)"
+        SURPLUS = "SURPLUS", "Surplus (Ecart Positif)"
+
+    rapprochement = models.ForeignKey(
+        RapprochementInventaire,
+        on_delete=models.CASCADE,
+        related_name="details",
+        verbose_name="Rapprochement",
+        help_text="Rapprochement rattache a ce detail.",
+    )
+    article = models.ForeignKey(
+        "immo.Article",
+        on_delete=models.PROTECT,
+        null=True,
+        blank=True,
+        related_name="rapprochements_details",
+        verbose_name="Article",
+        help_text="Article reference si le code correspond au referentiel.",
+    )
+    code_article = models.CharField(
+        max_length=300,
+        blank=True,
+        verbose_name="Code article",
+        help_text="Code article (utile pour les surplus non references).",
+    )
+    statut = models.CharField(
+        max_length=20,
+        choices=StatutRapprochement.choices,
+        default=StatutRapprochement.MATCH,
+        verbose_name="Statut",
+    )
+    confirmed = models.BooleanField(
+        default=False, null=True, blank=True, verbose_name="Confirmé?"
+    )
+    observation = models.TextField(null=True, blank=True, verbose_name="Observation")
+
+    class Meta:
+        verbose_name = "Détail du rapprochement"
+        verbose_name_plural = "Détails du rapprochement"
 
 
 # -- Emplacements -----------------------------------------------------------

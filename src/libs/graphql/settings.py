@@ -10,6 +10,7 @@ QUERY_LENGTH = {
     "TransactionIn": 100,
     "TransactionOut": 100,
     "EntrepriseAccount": 100,
+    "EnregistrementInventaire": 5,
 }
 
 

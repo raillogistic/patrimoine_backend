@@ -4,6 +4,10 @@
 
 
 
+
+
+
+
 from django.core.exceptions import PermissionDenied
 
 
@@ -51,6 +55,22 @@ def resolve_position_query(info,qs,**kwargs):
 
 
 def resolve_scannedarticle_query(info,qs,**kwargs):
+    return qs
+
+
+
+
+
+
+def resolve_rapprochementinventaire_query(info,qs,**kwargs):
+    return qs
+
+
+
+
+
+
+def resolve_rapprochementinventairedetail_query(info,qs,**kwargs):
     return qs
 
 
