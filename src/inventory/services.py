@@ -90,7 +90,7 @@ class InventoryReconciliationService:
         # On suppose que le registre est la source de vérité pour les articles "supposés être là"
         # Filtre: Articles non sortis (isexited=False)
         theoretical_articles = Article.objects.filter(isexited=False)
-        theoretical_codes = set(theoretical_articles.values_list("code", flat=True))
+        theoretical_ids = set(theoretical_articles.values_list("id", flat=True))
 
         # 2. Création du Rapprochement
         rapprochement, created = RapprochementInventaire.objects.update_or_create(
@@ -103,6 +103,7 @@ class InventoryReconciliationService:
             rapprochement.details.all().delete()
 
         details_to_create = []
+        processed_article_ids = set()
 
         # 3. Comparaison & Catégorisation
 
@@ -110,28 +111,47 @@ class InventoryReconciliationService:
         for code in valid_codes:
             article_id = item_data[code]["article_id"]
             
-            if code in theoretical_codes:
-                # MATCH: Trouvé et est dans le registre
-                status = RapprochementInventaireDetail.StatutRapprochement.MATCH
-            else:
-                # SURPLUS: Trouvé mais PAS dans le registre (ou sorti)
-                status = RapprochementInventaireDetail.StatutRapprochement.SURPLUS
-            
-            details_to_create.append(
-                RapprochementInventaireDetail(
-                    rapprochement=rapprochement,
-                    article_id=article_id if article_id else None, # Peut être None si surplus inconnu
-                    code_article=code,
-                    statut=status,
-                    confirmed=True # Auto-confirmé car validé par la logique de comptage
+            if article_id:
+                # Si l'article a déjà été traité via un autre code, on ignore (deduplication)
+                if article_id in processed_article_ids:
+                    continue
+                
+                processed_article_ids.add(article_id)
+
+                if article_id in theoretical_ids:
+                    # MATCH: Trouvé et est dans le registre actif
+                    status = RapprochementInventaireDetail.StatutRapprochement.MATCH
+                else:
+                    # SURPLUS: Trouvé mais PAS dans le registre actif (ex: sorti ou autre)
+                    status = RapprochementInventaireDetail.StatutRapprochement.SURPLUS
+                
+                details_to_create.append(
+                    RapprochementInventaireDetail(
+                        rapprochement=rapprochement,
+                        article_id=article_id,
+                        code_article=code,
+                        statut=status,
+                        confirmed=True
+                    )
                 )
-            )
+            else:
+                # SURPLUS: Code scanné mais non lié à un article (Inconnu)
+                details_to_create.append(
+                    RapprochementInventaireDetail(
+                        rapprochement=rapprochement,
+                        article_id=None,
+                        code_article=code,
+                        statut=RapprochementInventaireDetail.StatutRapprochement.SURPLUS,
+                        confirmed=True
+                    )
+                )
 
         # B. MANQUANT (Ce qui est dans le registre mais PAS trouvé physiquement)
-        missing_codes = theoretical_codes - valid_codes
+        # On compare les IDs théoriques avec ceux qu'on a traités
+        missing_ids = theoretical_ids - processed_article_ids
         
         # Récupérer les objets Article manquants pour les lier
-        missing_articles = theoretical_articles.filter(code__in=missing_codes)
+        missing_articles = Article.objects.filter(id__in=missing_ids)
         
         for article in missing_articles:
             details_to_create.append(

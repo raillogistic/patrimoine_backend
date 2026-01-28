@@ -1,4 +1,4 @@
-from django.db.models import Q
+from django.db.models import Q, Max
 from django_filters import BooleanFilter, CharFilter, FilterSet
 from inventory import models
 
@@ -32,7 +32,18 @@ enregistrementinventaire_filters = {}
 
 
 class EnregistrementInventaireCustomFilters(FilterSet):
-    pass
+    unique_article = BooleanFilter(method="filter_unique_article")
+
+    def filter_unique_article(self, queryset, name, value):
+        if value:
+            ids = (
+                queryset.filter(article__isnull=False)
+                .values("article")
+                .annotate(max_id=Max("id"))
+                .values_list("max_id", flat=True)
+            )
+            return queryset.filter(id__in=ids)
+        return queryset
 
 
 #######  ArticleInventaire  #########

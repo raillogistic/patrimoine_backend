@@ -145,7 +145,8 @@ class StatsContext:
         return float((scanned / total) * 100)
 
     def value_scanned_percentage(self):
-        scanned_val = self.queryset.filter(article__isnull=False).values('article').distinct().aggregate(s=Sum('article__totalfiscalprice'))['s'] or 0
+        scanned_ids = self.queryset.filter(article__isnull=False).values_list('article', flat=True).distinct()
+        scanned_val = Article.objects.filter(id__in=scanned_ids).aggregate(s=Sum('totalfiscalprice'))['s'] or 0
         total_val = Article.objects.aggregate(s=Sum('totalfiscalprice'))['s'] or 0
         try:
             if hasattr(total_val, 'is_nan') and total_val.is_nan(): return 0.0
@@ -204,11 +205,13 @@ class StatsContext:
         return [StatItem(label=str(x['article__type']), value=x['c']) for x in qs]
 
     def total_scanned_value(self):
-        val = self.queryset.filter(article__isnull=False).aggregate(s=Sum('article__totalfiscalprice'))['s']
+        scanned_ids = self.queryset.filter(article__isnull=False).values_list('article', flat=True).distinct()
+        val = Article.objects.filter(id__in=scanned_ids).aggregate(s=Sum('totalfiscalprice'))['s']
         return float(val) if val else 0.0
 
     def average_scanned_value(self):
-        val = self.queryset.filter(article__isnull=False).aggregate(a=Avg('article__totalfiscalprice'))['a']
+        scanned_ids = self.queryset.filter(article__isnull=False).values_list('article', flat=True).distinct()
+        val = Article.objects.filter(id__in=scanned_ids).aggregate(a=Avg('totalfiscalprice'))['a']
         return float(val) if val else 0.0
 
     def scans_on_weekend(self):
@@ -246,7 +249,8 @@ class StatsContext:
 
     def articles_age_distribution(self):
         current_year = timezone.now().year
-        qs = self.queryset.filter(article__isnull=False, article__acquiringdate__isnull=False).annotate(acq_year=ExtractYear('article__acquiringdate'))
+        scanned_ids = self.queryset.filter(article__isnull=False).values_list('article', flat=True).distinct()
+        qs = Article.objects.filter(id__in=scanned_ids, acquiringdate__isnull=False).annotate(acq_year=ExtractYear('acquiringdate'))
         bins = {'0-5 ans': 0, '5-10 ans': 0, '10-15 ans': 0, '15+ ans': 0}
         for item in qs.values('acq_year'):
             age = current_year - item['acq_year']
@@ -255,6 +259,9 @@ class StatsContext:
             elif age < 15: bins['10-15 ans'] += 1
             else: bins['15+ ans'] += 1
         return [StatItem(label=k, value=v) for k, v in bins.items()]
+
+    def unique_scanned_articles_count(self):
+        return self.queryset.filter(article__isnull=False).values('article').distinct().count()
 
     def most_scanned_family(self):
         qs = self.queryset.filter(article__isnull=False).values('article__family__familyname').annotate(c=Count('id')).order_by('-c')
@@ -319,6 +326,7 @@ class InventoryStats(graphene.ObjectType):
     avg_scans_per_active_user = graphene.Float()
     scans_last_hour = graphene.Int()
     articles_age_distribution = graphene.List(StatItem)
+    unique_scanned_articles_count = graphene.Int()
     most_scanned_family = graphene.Field(StatItem)
     most_scanned_location = graphene.Field(StatItem)
 
@@ -371,6 +379,7 @@ class InventoryStats(graphene.ObjectType):
     def resolve_avg_scans_per_active_user(root, info): return root.avg_scans_per_active_user()
     def resolve_scans_last_hour(root, info): return root.scans_last_hour()
     def resolve_articles_age_distribution(root, info): return root.articles_age_distribution()
+    def resolve_unique_scanned_articles_count(root, info): return root.unique_scanned_articles_count()
     def resolve_most_scanned_family(root, info): return root.most_scanned_family()
     def resolve_most_scanned_location(root, info): return root.most_scanned_location()
 
