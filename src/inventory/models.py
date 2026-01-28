@@ -356,7 +356,8 @@ class EnregistrementInventaire(ModeleHorodatage):
 
     @classmethod
     def check_extra(cls, ids: [str]):
-        return
+        EnregistrementInventaire.objects.filter(id__in=ids).update(is_extra=True)
+        return True
 
     def chhange_extra(self):
         self.is_extra = not self.is_extra

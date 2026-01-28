@@ -1,27 +1,13 @@
-
-
-
-
-
-
-
-
-
-
 from django.db.models import Q
+from django_filters import BooleanFilter, CharFilter, FilterSet
 from inventory import models
-from django_filters import FilterSet,CharFilter,BooleanFilter
-
-
-
-
-
-
 
 #######  CampagneInventaire  #########
 
 campagneinventaire_quick = {}
 campagneinventaire_filters = {}
+
+
 class CampagneInventaireCustomFilters(FilterSet):
     pass
 
@@ -30,38 +16,41 @@ class CampagneInventaireCustomFilters(FilterSet):
 
 groupecomptage_quick = {}
 groupecomptage_filters = {}
+
+
 class GroupeComptageCustomFilters(FilterSet):
     pass
 
 
 #######  EnregistrementInventaire  #########
 
-enregistrementinventaire_quick = {}
+enregistrementinventaire_quick = {
+    "article__desc": "str",
+    "article__code": "str",
+}
 enregistrementinventaire_filters = {}
+
+
 class EnregistrementInventaireCustomFilters(FilterSet):
     pass
-        
-
-
 
 
 #######  ArticleInventaire  #########
 
 articleinventaire_quick = {}
 articleinventaire_filters = {}
+
+
 class ArticleInventaireCustomFilters(FilterSet):
     pass
-        
-
-
-
-
 
 
 #######  PositionType  #########
 
 positiontype_quick = {}
 positiontype_filters = {}
+
+
 class PositionTypeCustomFilters(FilterSet):
     pass
 
@@ -70,6 +59,8 @@ class PositionTypeCustomFilters(FilterSet):
 
 position_quick = {}
 position_filters = {}
+
+
 class PositionCustomFilters(FilterSet):
     pass
 
@@ -78,28 +69,27 @@ class PositionCustomFilters(FilterSet):
 
 scannedarticle_quick = {}
 scannedarticle_filters = {}
+
+
 class ScannedArticleCustomFilters(FilterSet):
     pass
-        
-
-
 
 
 #######  RapprochementInventaire  #########
 
 rapprochementinventaire_quick = {}
 rapprochementinventaire_filters = {}
+
+
 class RapprochementInventaireCustomFilters(FilterSet):
     pass
-        
-
-
 
 
 #######  RapprochementInventaireDetail  #########
 
 rapprochementinventairedetail_quick = {}
 rapprochementinventairedetail_filters = {}
+
+
 class RapprochementInventaireDetailCustomFilters(FilterSet):
     pass
-        

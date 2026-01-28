@@ -25,9 +25,10 @@ class InventoryReconciliationService:
         2. Validé si scanné par au moins 2 groupes de type 'COMPTAGE' (A et B).
         3. Sinon -> Conflit (à vérifier par le groupe C).
         """
-        # Récupérer tous les scans de la campagne
+        # Récupérer tous les scans de la campagne (hors "extra")
         scans = (
             EnregistrementInventaire.objects.filter(campagne=self.campagne)
+            .exclude(is_extra=True)
             .select_related("groupe", "article")
             .values("code_article", "groupe__id", "groupe__role", "article__id")
         )
